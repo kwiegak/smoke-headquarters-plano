@@ -5,297 +5,188 @@ import { Link } from "react-router-dom";
 export default function Home() {
     return (
         <>
-            {/* ================================================= */}
-            {/* Hero */}
-            {/* ================================================= */}
-
-            <section
-                className={styles.hero}
-                style={{ backgroundImage: `url(${hero})` }}
-            >
+            <section className={styles.hero} style={{ backgroundImage: `url(${hero})` }}>
                 <div className={styles.heroOverlay}>
                     <div className={styles.heroContent}>
-
-                        <h1>
-                            Technology Solutions That Help
-                            <br />
-                            Businesses Grow
-                        </h1>
-
-                        <h2>
-                            Custom Software • Cloud • AI • Consulting
-                        </h2>
-
+                        <h1> Plano's Premium Smoke Shop</h1>
+                        <h2> THCA • Kratom • Glass • Vapes • CBD</h2>
                         <p>
-                            We help organizations modernize their technology
-                            through custom software development, cloud
-                            engineering, AI integration, and practical IT
-                            consulting designed around your business goals.
+                            Discover premium flower, disposable vapes,
+                            kratom, glass, edibles and accessories from
+                            trusted brands. Proudly serving Plano and the
+                            surrounding communities.
                         </p>
-                        <Link
-                            to="/consultation"
-                            className={styles.heroButton}
-                        >
-                            <span className={styles.desktopText}>
-                                Schedule Your Free Consultation
-                            </span>
+                        <div className={styles.heroButtons}>
+                            <Link to="/catalog" className={styles.primaryButton}>
+                                Shop Products
+                            </Link>
+                            <a href="#location" className={styles.secondaryButton}>
+                                Visit Store
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </section>
 
-                            <span className={styles.mobileText}>
-                                Schedule Consultation
-                            </span>
+
+            <section className={styles.categories}>
+                <div className={styles.container}>
+                    <h2>Shop By Category</h2>
+                    <div className={styles.categoryGrid}>
+                        <Link to="/catalog?category=flower" className={styles.categoryCard}>
+                            <h3>Flower</h3>
+                            <p>Premium Indoor THCA Flower</p>
                         </Link>
-
+                        <Link to="/catalog?category=vapes" className={styles.categoryCard}>
+                            <h3>Vapes</h3>
+                            <p>Disposables & Cartridges</p>
+                        </Link>
+                        <Link to="/catalog?category=kratom" className={styles.categoryCard}>
+                            <h3>Kratom</h3>
+                            <p>Powders, Capsules & Extracts</p>
+                        </Link>
+                        <Link to="/catalog?category=glass" className={styles.categoryCard}>
+                            <h3>Glass</h3>
+                            <p>Pipes, Rigs & Accessories</p>
+                        </Link>
                     </div>
                 </div>
             </section>
 
-            {/* ================================================= */}
-            {/* Local */}
-            {/* ================================================= */}
-
-            <section className={styles.localSection}>
-
+            <section className={styles.featured}>
                 <div className={styles.container}>
-
-                    <p className={styles.localText}>
-                        Proudly serving businesses throughout
-                        Plano • Frisco • Allen • McKinney • Richardson • North Dallas
-                    </p>
-
+                    <h2>Featured Products</h2>
+                    <div className={styles.productGrid}>
+                        <Link to="/catalog?category=flower" className={styles.productCard}>
+                            <img
+                                src="/images/products/flower-1.png"
+                                alt="Premium THCA Flower"
+                            />
+                            <h3>Premium THCA Flower</h3>
+                            <span>$39.99</span>
+                        </Link>
+                        <Link to="/catalog?category=vapes" className={styles.productCard}>
+                            <img src="/images/products/vape-1.png" alt="Disposable Vape"/>
+                            <h3>Disposable Vape</h3>
+                            <span>$24.99</span>
+                        </Link>
+                        <Link to="/catalog?category=glass" className={styles.productCard}>
+                            <img src="/images/products/glass-1.png" alt="Glass Piece"/>
+                            <h3>Glass Piece</h3>
+                            <span>$49.99</span>
+                        </Link>
+                        <Link to="/catalog?category=edibles" className={styles.productCard}>
+                            <img src="/images/products/gummies-1.png" alt="THCA Gummies"/>
+                            <h3>THCA Gummies</h3>
+                            <span>$19.99</span>
+                        </Link>
+                    </div>
                 </div>
-
             </section>
 
-            {/* ================================================= */}
-            {/* Services */}
-            {/* ================================================= */}
-
-            <section
-                id="services"
-                className={styles.services}
-            >
-
-                <div className={styles.serviceCard}>
-
-                    <h3>Custom Software Development</h3>
-
-                    <p>
-                        Enterprise web applications, APIs,
-                        backend systems, integrations,
-                        and scalable software built around
-                        your organization's workflow.
-                    </p>
-
-                </div>
-
-                <div className={styles.serviceCard}>
-
-                    <h3>Cloud Solutions</h3>
-
-                    <p>
-                        AWS architecture, migrations,
-                        DevOps automation,
-                        infrastructure modernization,
-                        monitoring,
-                        and cloud optimization.
-                    </p>
-
-                </div>
-
-                <div className={styles.serviceCard}>
-
-                    <h3>Technology Consulting</h3>
-
-                    <p>
-                        Technology assessments,
-                        modernization planning,
-                        AI adoption,
-                        automation opportunities,
-                        and long-term digital strategy.
-                    </p>
-
-                </div>
-
-            </section>
-
-            {/* ================================================= */}
-            {/* Why Choose Us */}
-            {/* ================================================= */}
-
-            <section
-                id="about"
-                className={styles.whyUs}
-            >
-
+            <section className={styles.whyUs}>
                 <div className={styles.container}>
-
-                    <h2>
-                        Why Plano Technology Partners?
-                    </h2>
-
+                    <h2>Why Shop With Us?</h2>
                     <div className={styles.features}>
-
                         <div className={styles.feature}>
-
-                            <h3>Enterprise Experience</h3>
-
+                            <div className={styles.icon}>🏆</div>
+                            <h3>Premium Products</h3>
                             <p>
-                                Years of experience designing and
-                                supporting enterprise-scale software
-                                systems and cloud platforms.
+                                Carefully selected flower,
+                                vapes, glass and accessories
+                                from brands you know and trust.
                             </p>
-
                         </div>
-
                         <div className={styles.feature}>
-
-                            <h3>Local Consulting</h3>
-
+                            <div className={styles.icon}>🔥</div>
+                            <h3>Top Brands</h3>
                             <p>
-                                Based in Plano and focused on helping
-                                local organizations solve practical
-                                technology challenges.
+                                We carry the industry's
+                                leading manufacturers with
+                                new arrivals every week.
                             </p>
-
                         </div>
-
                         <div className={styles.feature}>
-
-                            <h3>Cloud Expertise</h3>
-
+                            <div className={styles.icon}>💬</div>
+                            <h3>Friendly Staff</h3>
                             <p>
-                                AWS architecture, cloud migrations,
-                                automation, DevOps,
-                                and scalable infrastructure.
+                                Our knowledgeable team can
+                                help you find exactly what
+                                you're looking for.
                             </p>
-
                         </div>
-
                         <div className={styles.feature}>
-
-                            <h3>AI Solutions</h3>
-
+                            <div className={styles.icon}>📍</div>
+                            <h3>Convenient Location</h3>
                             <p>
-                                Identify opportunities to leverage
-                                AI responsibly through automation,
-                                productivity improvements,
-                                and business intelligence.
+                                Located in Plano with easy
+                                access and plenty of parking.
                             </p>
-
                         </div>
-
                     </div>
-
                 </div>
-
             </section>
 
-            {/* ================================================= */}
-            {/* Process */}
-            {/* ================================================= */}
-
             <section
-                id="process"
-                className={styles.process}
+                id="location"
+                className={styles.location}
             >
-
                 <div className={styles.container}>
-
-                    <h2>
-                        Simple, Straightforward Process
-                    </h2>
-
-                    <div className={styles.processGrid}>
-
-                        <div className={styles.processStep}>
-
-                            <span>1</span>
-
-                            <h3>Schedule Consultation</h3>
-
-                            <p>
-                                Tell us about your business,
-                                current systems,
-                                and technology goals.
+                    <div className={styles.locationContent}>
+                        <div className={styles.locationInfo}>
+                            <h2>Visit Smoke HQ</h2>
+                            <p> 📍 2001 Coit Rd Suite 168 
+                                <br />
+                                Plano, TX 75075
                             </p>
-
-                        </div>
-
-                        <div className={styles.processStep}>
-
-                            <span>2</span>
-
-                            <h3>Technology Review</h3>
-
+                            <h3>Store Hours</h3>
                             <p>
-                                We'll discuss solutions,
-                                priorities,
-                                budget,
-                                timeline,
-                                and available options.
+                                Monday - Saturday
+                                <br />
+                                10:00 AM - 11:00 PM
                             </p>
-
-                        </div>
-
-                        <div className={styles.processStep}>
-
-                            <span>3</span>
-
-                            <h3>Receive Your Roadmap</h3>
-
                             <p>
-                                Walk away with practical
-                                recommendations,
-                                next steps,
-                                and a clear implementation plan.
+                                Sunday
+                                <br />
+                                11:00 AM - 9:00 PM
                             </p>
-
+                            <a
+                                href="https://maps.google.com/?q=2001+Coit+Rd+Suite+168+Plano+TX+75075"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className={styles.primaryButton}>
+                                Get Directions
+                            </a>
                         </div>
-
+                        <div className={styles.mapContainer}>
+                            <iframe
+                                title="Smoke HQ Location"
+                                src="https://www.google.com/maps?q=2001+Coit+Rd+Suite+168+Plano+TX+75075&output=embed"
+                                loading="lazy"
+                            />
+                        </div>
                     </div>
-
                 </div>
-
             </section>
 
-            {/* ================================================= */}
-            {/* CTA */}
-            {/* ================================================= */}
-
-            <section
-                id="contact"
-                className={styles.cta}
-            >
-
+            <section className={styles.cta}>
                 <div className={styles.container}>
-
                     <h2>
-                        Ready to Modernize Your Business?
+                        Ready to Elevate Your Experience?
                     </h2>
-
                     <p>
-                        Whether you're planning a new software project,
-                        migrating to the cloud,
-                        or looking for trusted technology guidance,
-                        we'd love to learn about your goals.
+                        Browse our complete selection of premium
+                        flower, vapes, kratom, glass, CBD,
+                        accessories and much more.
                     </p>
-
                     <Link
-                        to="/consultation"
-                        className={styles.heroButton}
+                        to="/catalog"
+                        className={styles.primaryButton}
                     >
-                        <span className={styles.desktopText}>
-                            Schedule Your Free Consultation
-                        </span>
-
-                        <span className={styles.mobileText}>
-                            Schedule Consultation
-                        </span>
+                        Shop Now
                     </Link>
                 </div>
-
             </section>
-
         </>
     );
 }

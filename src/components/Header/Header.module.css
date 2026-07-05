@@ -1,279 +1,131 @@
-/* ======================================================
-   Header
-====================================================== */
-
 .header {
     position: sticky;
     top: 0;
     z-index: 1000;
-
-    background: #ffffff;
-
-    border-bottom: 1px solid #edf2f7;
-
-    box-shadow: 0 2px 14px rgba(0, 0, 0, .05);
+    background: #111111;
+    border-bottom: 2px solid #f6a31a;
+    box-shadow: 0 6px 20px rgba(0,0,0,.35);
 }
 
-/* ======================================================
-   Layout
-====================================================== */
-
 .container {
-
-    width: 100%;
-
+    width: min(1400px, calc(100% - 60px));
+    margin: 0 auto;
     display: flex;
     justify-content: space-between;
     align-items: center;
-
-    padding: 14px 34px;
-
-    box-sizing: border-box;
+    padding: 14px 0;
 }
 
-/* ======================================================
-   Brand
-====================================================== */
-
 .brand {
-
     display: flex;
     align-items: center;
-
     text-decoration: none;
+    transition: transform .25s ease;
+}
 
-    flex-shrink: 0;
+.brand:hover {
+    transform: scale(1.03);
 }
 
 .logo {
-
-    width: 56px;
-    height: 56px;
-
-    margin-right: 14px;
+    width: 275px;
+    height: auto;
+    display: block;
 }
 
-.textContainer {
-
-    display: flex;
-    flex-direction: column;
-}
-
-.company {
-
-    color: #0B2F6B;
-
-    font-size: 1.75rem;
-    font-weight: 700;
-
-    line-height: 1.05;
-}
-
-.tagline {
-
-    margin-top: 4px;
-
-    color: #8d95a5;
-
-    font-size: .72rem;
-
-    letter-spacing: 2px;
-}
-
-/* ======================================================
-   Navigation
-====================================================== */
 
 .nav {
-
     display: flex;
     align-items: center;
-
-    gap: 2.75rem;
+    gap: 3rem;
 }
 
 .nav a {
-
     position: relative;
-
     text-decoration: none;
-
-    color: #163c7c;
-
+    color: #ffffff;
     font-size: 1rem;
     font-weight: 700;
-
+    letter-spacing: .5px;
+    text-transform: uppercase;
     transition: color .25s ease;
 }
 
 .nav a:hover {
-
-    color: #0098db;
+    color: #f6a31a;
 }
 
 .nav a::after {
-
     content: "";
-
     position: absolute;
-
     left: 0;
     bottom: -8px;
-
     width: 0;
-
-    height: 2px;
-
-    background: #0098db;
-
+    height: 3px;
+    background: #f6a31a;
+    border-radius: 10px;
     transition: width .25s ease;
 }
 
 .nav a:hover::after {
-
     width: 100%;
 }
 
-/* ======================================================
-   Large Desktop
-====================================================== */
 
-@media (min-width: 1600px) {
-
-    .container {
-
-        padding-left: 48px;
-        padding-right: 48px;
+@media (min-width:1600px){
+    .container{
+        width:min(1600px, calc(100% - 100px));
     }
-
+    .logo{
+        width:310px;
+    }
 }
 
-/* ======================================================
-   Tablet
-====================================================== */
 
-@media (max-width: 992px) {
-
-    .container {
-
-        padding: 14px 24px;
+@media (max-width:992px){
+    .container{
+        width:calc(100% - 40px);
     }
-
-    .company {
-
-        font-size: 1.45rem;
+    .logo{
+        width:220px;
     }
-
-    .logo {
-
-        width: 50px;
-        height: 50px;
+    .nav{
+        gap:1.75rem;
     }
-
-    .nav {
-
-        gap: 1.75rem;
+    .nav a{
+        font-size:.95rem;
     }
-
 }
 
-/* ======================================================
-   Mobile
-====================================================== */
-
-@media (max-width: 768px) {
-
-    .container {
-
-        flex-direction: column;
-
-        align-items: center;
-
-        padding: 18px;
-
-        gap: 18px;
+@media (max-width:768px){
+    .container{
+        flex-direction:column;
+        gap:22px;
+        padding:18px 0;
     }
 
-    .brand {
-
-        justify-content: center;
+    .logo{
+        width:240px;
     }
 
-    .textContainer {
-
-        align-items: flex-start;
+    .nav{
+        display:grid;
+        grid-template-columns:repeat(2, auto);
+        gap:18px 36px;
     }
-
-    .company {
-
-        font-size: 1.4rem;
-    }
-
-    .logo {
-
-        width: 46px;
-        height: 46px;
-    }
-
-    .nav {
-
-        width: 100%;
-
-        display: grid;
-
-        grid-template-columns: repeat(2, auto);
-
-        justify-content: center;
-
-        gap: 18px 34px;
-    }
-
-    .nav a {
-
-        text-align: center;
-    }
-
 }
 
-/* ======================================================
-   Small Phones
-====================================================== */
-
-@media (max-width: 480px) {
-
-    .container {
-
-        padding: 16px;
+@media (max-width:480px){
+    .logo{
+        width:200px;
     }
 
-    .company {
-
-        font-size: 1.15rem;
+    .nav{
+        gap:16px 26px;
     }
 
-    .tagline {
-
-        font-size: .62rem;
-
-        letter-spacing: 1.4px;
-    }
-
-    .logo {
-
-        width: 40px;
-        height: 40px;
-
-        margin-right: 12px;
-    }
-
-    .nav {
-
-        gap: 16px 28px;
-    }
-
-    .nav a {
-
-        font-size: .95rem;
+    .nav a{
+        font-size:.9rem;
     }
 
 }
