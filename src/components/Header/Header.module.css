@@ -29,14 +29,14 @@
     min-height: var(--header-height);
 
     display: grid;
-    
-    grid-template-columns: 60px 1fr 90px;
-    
+
+    grid-template-columns: auto 1fr auto;
+
     align-items: center;
 
-    justify-content: space-between;
+    column-gap: var(--space-2);
 
-    padding: 0 var(--space-3);
+    padding: 0 var(--space-2);
 
     border-radius: var(--radius-lg);
 
@@ -56,13 +56,13 @@
 
 .logoContainer {
 
-    flex: 1;
-
     display: flex;
 
     align-items: center;
 
     justify-content: center;
+
+    justify-self: center;
 
     gap: var(--space-2);
 
@@ -70,7 +70,9 @@
 
 .logo {
 
-    height: 54px;
+    height: 62px;
+
+    width: auto;
 
     transition: transform var(--transition);
 
@@ -124,9 +126,9 @@
 
 .iconButton {
 
-    width: 44px;
+    width: 48px;
 
-    height: 44px;
+    height: 48px;
 
     display: flex;
 
@@ -162,9 +164,15 @@
 
     align-items: center;
 
-    gap: var(--space-1);
+    justify-content: center;
 
-    padding: 10px 16px;
+    gap: 6px;
+
+    height: 48px;
+
+    min-width: 64px;
+
+    padding: 0 16px;
 
     border: none;
 
@@ -176,7 +184,7 @@
 
     font-weight: 700;
 
-    font-size: 1.05rem;
+    font-size: 1rem;
 
     transition: var(--transition);
 
@@ -446,9 +454,9 @@
 
     .logo {
 
-    height: 64px;
-    
-    width: auto;
+        height: 60px;
+
+        width: auto;
 
     }
 
