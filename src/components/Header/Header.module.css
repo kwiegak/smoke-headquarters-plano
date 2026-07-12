@@ -1,131 +1,275 @@
+/* ===========================================
+   Header
+=========================================== */
+
 .header {
     position: sticky;
     top: 0;
-    z-index: 1000;
-    background: #111111;
-    border-bottom: 2px solid #f6a31a;
-    box-shadow: 0 6px 20px rgba(0,0,0,.35);
+    z-index: 500;
+
+    width: 100%;
+    height: 72px;
+
+    background: #000;
+    border-bottom: 1px solid #1d1d1d;
+
+    display: flex;
+    justify-content: center;
+
+    box-shadow: 0 4px 18px rgba(0, 0, 0, .35);
 }
 
-.container {
-    width: min(1400px, calc(100% - 60px));
-    margin: 0 auto;
+.headerInner {
+    width: min(1400px, 100%);
+    height: 100%;
+
     display: flex;
+    align-items: center;
     justify-content: space-between;
-    align-items: center;
-    padding: 14px 0;
+
+    padding: 0 18px;
 }
 
-.brand {
+/* ===========================================
+   Logo
+=========================================== */
+
+.logoContainer {
+
+    flex: 1;
+
     display: flex;
-    align-items: center;
-    text-decoration: none;
-    transition: transform .25s ease;
-}
 
-.brand:hover {
-    transform: scale(1.03);
+    justify-content: center;
 }
 
 .logo {
-    width: 275px;
-    height: auto;
-    display: block;
+    height: 54px;
+    width: auto;
+    object-fit: contain;
+    transition: transform .25s ease;
 }
 
+.logo:hover {
+    transform: scale(1.04);
+}
+
+/* ===========================================
+   Buttons
+=========================================== */
+
+.iconButton,
+.cartButton {
+
+    width: 44px;
+
+    height: 44px;
+
+    border: none;
+
+    background: none;
+
+    color: white;
+
+    font-size: 2rem;
+
+    cursor: pointer;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    position: relative;
+}
+
+.iconButton:hover,
+.cartButton:hover {
+
+    color: #F6A31A;
+}
+
+.cartBadge {
+    position: absolute;
+    top: 2px;
+    right: -2px;
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    background: #F6A31A;
+    color: black;
+    font-size: .7rem;
+    font-weight: 700;
+    border: 2px solid #000;
+}
+
+/* ===========================================
+   Overlay
+=========================================== */
+
+.overlay {
+
+    position: fixed;
+
+    inset: 0;
+
+    background: rgba(0, 0, 0, .55);
+
+    z-index: 900;
+}
+
+/* ===========================================
+   Drawer
+=========================================== */
+
+.drawer {
+
+    position: fixed;
+
+    top: 0;
+
+    left: -330px;
+
+    width: 320px;
+
+    max-width: 85vw;
+
+    height: 100vh;
+
+    background: #000;
+
+    transition: .3s;
+
+    z-index: 1000;
+
+    overflow-y: auto;
+
+    box-shadow: 8px 0 30px rgba(0, 0, 0, .45);
+}
+
+.drawerOpen {
+
+    left: 0;
+}
+
+/* ===========================================
+   Drawer Header
+=========================================== */
+
+.drawerHeader {
+
+    height: 72px;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 20px;
+
+    padding: 0 16px;
+
+    border-bottom: 1px solid #222;
+}
+
+.drawerLogo {
+
+    height: 38px;
+}
+
+/* ===========================================
+   Navigation
+=========================================== */
 
 .nav {
+
     display: flex;
-    align-items: center;
-    gap: 3rem;
+
+    flex-direction: column;
+
+    padding: 16px 0;
 }
 
 .nav a {
-    position: relative;
+
+    color: white;
+
     text-decoration: none;
-    color: #ffffff;
-    font-size: 1rem;
-    font-weight: 700;
-    letter-spacing: .5px;
-    text-transform: uppercase;
-    transition: color .25s ease;
+
+    font-size: 1.1rem;
+
+    font-weight: 600;
+
+    padding: 18px 24px;
+
+    transition: .25s;
 }
 
 .nav a:hover {
-    color: #f6a31a;
+
+    background: #121212;
+
+    color: #F6A31A;
 }
 
-.nav a::after {
-    content: "";
-    position: absolute;
-    left: 0;
-    bottom: -8px;
-    width: 0;
-    height: 3px;
-    background: #f6a31a;
-    border-radius: 10px;
-    transition: width .25s ease;
+.expandButton {
+
+    background: none;
+
+    border: none;
+
+    color: white;
+
+    padding: 18px 24px;
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    font-size: 1.1rem;
+
+    font-weight: 600;
+
+    cursor: pointer;
 }
 
-.nav a:hover::after {
-    width: 100%;
+.expandButton:hover {
+
+    background: #121212;
+
+    color: #F6A31A;
 }
 
+.subMenu {
 
-@media (min-width:1600px){
-    .container{
-        width:min(1600px, calc(100% - 100px));
-    }
-    .logo{
-        width:310px;
-    }
+    background: #090909;
+
+    display: flex;
+
+    flex-direction: column;
 }
 
+.subMenu a {
 
-@media (max-width:992px){
-    .container{
-        width:calc(100% - 40px);
-    }
-    .logo{
-        width:220px;
-    }
-    .nav{
-        gap:1.75rem;
-    }
-    .nav a{
-        font-size:.95rem;
-    }
+    padding: 14px 48px;
+
+    font-size: .95rem;
+
+    color: #bbbbbb;
 }
 
-@media (max-width:768px){
-    .container{
-        flex-direction:column;
-        gap:22px;
-        padding:18px 0;
-    }
+.subMenu a:hover {
 
-    .logo{
-        width:240px;
-    }
-
-    .nav{
-        display:grid;
-        grid-template-columns:repeat(2, auto);
-        gap:18px 36px;
-    }
+    color: #F6A31A;
 }
 
-@media (max-width:480px){
-    .logo{
-        width:200px;
-    }
+.nav hr {
 
-    .nav{
-        gap:16px 26px;
-    }
+    border: none;
 
-    .nav a{
-        font-size:.9rem;
-    }
+    border-top: 1px solid #252525;
 
+    margin: 18px 0;
 }
