@@ -15,12 +15,7 @@ export default function Header() {
 
       {/* Overlay */}
 
-      {menuOpen && (
-        <div
-          className={styles.overlay}
-          onClick={() => setMenuOpen(false)}
-        />
-      )}
+
 
       {/* Header */}
 

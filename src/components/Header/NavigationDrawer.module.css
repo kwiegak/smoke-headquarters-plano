@@ -1,0 +1,204 @@
+/* ==========================================================
+   Drawer
+========================================================== */
+
+.drawer {
+    position: fixed;
+    inset: 0;
+
+    z-index: 2000;
+
+    pointer-events: none;
+}
+
+.drawerCard {
+
+    position: absolute;
+
+    top: 92px;
+
+    left: 18px;
+
+    width: 340px;
+
+    max-width: calc(100vw - 36px);
+
+    background: white;
+
+    border-radius: 16px;
+
+    overflow: visible;
+
+    transform: translateX(-110%);
+
+    transition: transform .30s ease;
+
+    pointer-events: auto;
+
+    box-shadow:
+        0 18px 45px rgba(0, 0, 0, .30);
+
+}
+
+
+.drawerOpen .drawerCard {
+
+    transform: translateX(0);
+
+}
+
+
+/* ==========================================================
+   Floating Close Button
+========================================================== */
+
+.closeButton {
+
+    position: absolute;
+
+    left: calc(18px + 170px);
+    transform: translateX(-50%);
+
+    transform: translateX(-50%);
+
+    width: 58px;
+    height: 58px;
+
+    border-radius: 50%;
+
+    border: none;
+
+    background: white;
+
+    box-shadow:
+        0 10px 24px rgba(0, 0, 0, .20);
+
+    z-index: 5;
+
+        transition:
+                transform .2s ease,
+                box-shadow .2s ease;
+    
+
+}
+
+.closeButton:hover {
+
+    transform: translateX(-50%) scale(1.05);
+
+}
+
+/* ==========================================================
+   Navigation
+========================================================== */
+
+.nav {
+
+    display: flex;
+
+    flex-direction: column;
+
+    padding: 90px 0 40px;
+
+}
+
+/* ==========================================================
+   Links
+========================================================== */
+
+.navLink,
+.expandButton {
+
+    width: 100%;
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    padding: 22px 30px;
+
+    background: none;
+
+    border: none;
+
+    color: #222;
+
+    text-decoration: none;
+
+    font-size: 1.55rem;
+
+    font-weight: 700;
+
+    transition: .2s;
+
+    cursor: pointer;
+
+}
+
+.navLink:hover,
+.expandButton:hover {
+
+    background: #f7f7f7;
+
+}
+
+.navLink svg,
+.expandButton svg {
+
+    font-size: 1.4rem;
+
+    color: #999;
+
+}
+
+/* ==========================================================
+   Sub Menu
+========================================================== */
+
+.subMenu {
+
+    display: flex;
+
+    flex-direction: column;
+
+    background: #fafafa;
+
+}
+
+.subMenu a {
+
+    padding: 16px 50px;
+
+    text-decoration: none;
+
+    color: #666;
+
+    font-size: 1.05rem;
+
+    transition: .2s;
+
+}
+
+.subMenu a:hover {
+
+    background: white;
+
+    color: #111;
+
+}
+
+/* ==========================================================
+   Divider
+========================================================== */
+
+.nav hr {
+
+    margin: 20px 30px;
+
+    border: none;
+
+    border-top: 1px solid #e8e8e8;
+
+}

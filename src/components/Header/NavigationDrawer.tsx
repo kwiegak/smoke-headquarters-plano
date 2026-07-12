@@ -1,256 +1,184 @@
-import { useState } from "react";
+import { type Dispatch, type SetStateAction } from "react";
 import { Link } from "react-router-dom";
-import logo from "../../assets/images/logo.png";
+
 import {
     HiOutlineX,
-    HiChevronDown,
-    HiChevronRight,
-    HiOutlineFire,
-    HiOutlineSparkles,
-    HiOutlineCube,
-    HiOutlineGift,
-    HiOutlineInformationCircle,
-    HiOutlinePhone
+    HiChevronRight
 } from "react-icons/hi";
 
-import styles from "./Header.module.css";
+import DrawerAccordion from "./DrawerAccordion";
+
+import styles from "./NavigationDrawer.module.css";
 
 interface NavigationDrawerProps {
     menuOpen: boolean;
-    setMenuOpen: React.Dispatch<React.SetStateAction<boolean>>;
+    setMenuOpen: Dispatch<SetStateAction<boolean>>;
 }
+
+interface NavigationItem {
+    title: string;
+    to?: string;
+    children?: {
+        label: string;
+        to: string;
+    }[];
+}
+
+const navigationItems: NavigationItem[] = [
+    {
+        title: "Shop All Products",
+        to: "/catalog"
+    },
+    {
+        title: "THCA Flower",
+        children: [
+            {
+                label: "Indoor Flower",
+                to: "/catalog?category=flower"
+            },
+            {
+                label: "Pre Rolls",
+                to: "/catalog?category=pre-rolls"
+            },
+            {
+                label: "Moon Rocks",
+                to: "/catalog?category=moon-rocks"
+            }
+        ]
+    },
+    {
+        title: "Disposable Vapes",
+        children: [
+            {
+                label: "Fryd",
+                to: "/catalog?brand=fryd"
+            },
+            {
+                label: "Cakes",
+                to: "/catalog?brand=cakes"
+            },
+            {
+                label: "Muha Meds",
+                to: "/catalog?brand=muha"
+            }
+        ]
+    },
+    {
+        title: "Gummies",
+        to: "/catalog?category=gummies"
+    },
+    {
+        title: "Kratom",
+        to: "/catalog?category=kratom"
+    },
+    {
+        title: "Glass",
+        to: "/catalog?category=glass"
+    },
+    {
+        title: "CBD",
+        to: "/catalog?category=cbd"
+    },
+    {
+        title: "Deals",
+        to: "/deals"
+    },
+    {
+        title: "About",
+        to: "/about"
+    },
+    {
+        title: "Contact",
+        to: "/contact"
+    }
+];
 
 export default function NavigationDrawer({
     menuOpen,
     setMenuOpen
 }: NavigationDrawerProps) {
 
-    const [flowerOpen, setFlowerOpen] = useState(false);
-
-    const [vapeOpen, setVapeOpen] = useState(false);
-
     const onClose = () => {
         setMenuOpen(false);
     };
 
     return (
+        <>
 
-        <aside
-            className={`${styles.drawer} ${menuOpen ? styles.drawerOpen : ""
-                }`}
-        >
-
-            <div className={styles.drawerHeader}>
-
-                <button
-                    className={styles.iconButton}
+            {menuOpen && (
+                <div
+                    className={styles.overlay}
                     onClick={onClose}
-                >
-                    <HiOutlineX />
-                </button>
-
-            </div>
-
-            <div className={styles.drawerHero}>
-
-                <img
-                    src={logo}
-                    alt="Smoke Headquarters"
-                    className={styles.drawerLogo}
                 />
+            )}
 
-                <h2>
-                    Smoke Headquarters
-                </h2>
+            <aside
+                className={`${styles.drawer} ${menuOpen ? styles.drawerOpen : ""}`}
+                aria-hidden={!menuOpen}
+            >
 
-                <p>
-                    Premium THCA • Vapes • Glass
-                </p>
+                <div className={styles.drawerCard}>
 
-                <span>
-                    🚚 Free delivery over $75
-                </span>
+                    <button
+                        className={styles.closeButton}
+                        onClick={onClose}
+                        aria-label="Close navigation"
+                    >
+                        <HiOutlineX />
+                    </button>
 
-            </div>
+                    <nav className={styles.nav}>
 
-            <nav className={styles.nav}>
+                        {navigationItems.map((item) => {
 
-                <Link
-                    to="/deals"
-                    onClick={onClose}
-                >
-                    <HiOutlineFire />
-                    Deals
-                </Link>
+                            if (item.children) {
 
-                {/* THCA */}
+                                return (
+                                    <DrawerAccordion
+                                        key={item.title}
+                                        title={item.title}
+                                    >
 
-                <button
-                    className={styles.expandButton}
-                    onClick={() => setFlowerOpen(!flowerOpen)}
-                >
+                                        {item.children.map((child) => (
 
-                    <span>
+                                            <Link
+                                                key={child.to}
+                                                to={child.to}
+                                                onClick={onClose}
+                                            >
+                                                {child.label}
+                                            </Link>
 
-                        <HiOutlineSparkles />
+                                        ))}
 
-                        THCA Flower
+                                    </DrawerAccordion>
+                                );
 
-                    </span>
+                            }
 
-                    {flowerOpen
-                        ? <HiChevronDown />
-                        : <HiChevronRight />
-                    }
+                            return (
+                                <Link
+                                    key={item.to}
+                                    to={item.to!}
+                                    onClick={onClose}
+                                    className={styles.navLink}
+                                >
 
-                </button>
+                                    <span>{item.title}</span>
 
-                {flowerOpen && (
+                                    <HiChevronRight />
 
-                    <div className={styles.subMenu}>
+                                </Link>
+                            );
 
-                        <Link
-                            to="/catalog?category=flower"
-                            onClick={onClose}
-                        >
-                            Indoor Flower
-                        </Link>
+                        })}
 
-                        <Link
-                            to="/catalog?category=pre-rolls"
-                            onClick={onClose}
-                        >
-                            Pre Rolls
-                        </Link>
+                    </nav>
 
-                        <Link
-                            to="/catalog?category=moon-rocks"
-                            onClick={onClose}
-                        >
-                            Moon Rocks
-                        </Link>
+                </div>
 
-                    </div>
+            </aside>
 
-                )}
-
-                {/* Vapes */}
-
-                <button
-                    className={styles.expandButton}
-                    onClick={() => setVapeOpen(!vapeOpen)}
-                >
-
-                    <span>
-
-                        💨
-
-                        Disposable Vapes
-
-                    </span>
-
-                    {vapeOpen
-                        ? <HiChevronDown />
-                        : <HiChevronRight />
-                    }
-
-                </button>
-
-                {vapeOpen && (
-
-                    <div className={styles.subMenu}>
-
-                        <Link
-                            to="/catalog?brand=fryd"
-                            onClick={onClose}
-                        >
-                            Fryd
-                        </Link>
-
-                        <Link
-                            to="/catalog?brand=cakes"
-                            onClick={onClose}
-                        >
-                            Cakes
-                        </Link>
-
-                        <Link
-                            to="/catalog?brand=muha"
-                            onClick={onClose}
-                        >
-                            Muha Meds
-                        </Link>
-
-                    </div>
-
-                )}
-
-                <Link
-                    to="/catalog?category=glass"
-                    onClick={onClose}
-                >
-                    <HiOutlineCube />
-                    Glass
-                </Link>
-
-                <Link
-                    to="/catalog?category=gummies"
-                    onClick={onClose}
-                >
-                    🍬 Gummies
-                </Link>
-
-                <Link
-                    to="/catalog?category=kratom"
-                    onClick={onClose}
-                >
-                    🌿 Kratom
-                </Link>
-
-                <Link
-                    to="/catalog?category=cbd"
-                    onClick={onClose}
-                >
-                    CBD
-                </Link>
-
-                <Link
-                    to="/catalog?category=accessories"
-                    onClick={onClose}
-                >
-                    <HiOutlineGift />
-                    Accessories
-                </Link>
-
-                <hr />
-
-                <Link
-                    to="/brands"
-                    onClick={onClose}
-                >
-                    Brands
-                </Link>
-
-                <Link
-                    to="/about"
-                    onClick={onClose}
-                >
-                    <HiOutlineInformationCircle />
-                    About
-                </Link>
-
-                <Link
-                    to="/contact"
-                    onClick={onClose}
-                >
-                    <HiOutlinePhone />
-                    Contact
-                </Link>
-
-            </nav>
-
-        </aside>
-
+        </>
     );
-
 }

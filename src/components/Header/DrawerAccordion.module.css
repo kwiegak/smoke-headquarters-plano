@@ -1,0 +1,131 @@
+/* ==========================================================
+   Accordion
+========================================================== */
+
+.accordion {
+
+    display: flex;
+
+    flex-direction: column;
+
+}
+
+/* ==========================================================
+   Accordion Header
+========================================================== */
+
+.accordionHeader {
+
+    width: 100%;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    gap: var(--space-2);
+
+    padding: 22px 30px;
+
+    background: none;
+
+    border: none;
+
+    cursor: pointer;
+
+    color: #222;
+
+    font-size: 1.55rem;
+
+    font-weight: 700;
+
+    text-align: left;
+
+    transition:
+        background var(--transition),
+        color var(--transition);
+
+}
+
+.accordionHeader:hover {
+
+    background: #F7F7F7;
+
+}
+
+.accordionHeader span {
+
+    flex: 1;
+
+}
+
+/* ==========================================================
+   Chevron
+========================================================== */
+
+.accordionHeader svg {
+
+    flex-shrink: 0;
+
+    font-size: 1.35rem;
+
+    color: #999;
+
+    transition:
+        transform var(--transition),
+        color var(--transition);
+
+}
+
+.accordionHeader:hover svg {
+
+    color: var(--accent);
+
+}
+
+/* ==========================================================
+   Accordion Content
+========================================================== */
+
+.accordionContent {
+
+    display: flex;
+
+    flex-direction: column;
+
+    background: #FAFAFA;
+
+    border-top: 1px solid #EFEFEF;
+
+}
+
+/* ==========================================================
+   Child Links
+========================================================== */
+
+.accordionContent a {
+
+    padding: 16px 50px;
+
+    color: #555;
+
+    text-decoration: none;
+
+    font-size: 1rem;
+
+    font-weight: 500;
+
+    transition:
+        background var(--transition),
+        color var(--transition);
+
+}
+
+.accordionContent a:hover {
+
+    background: white;
+
+    color: var(--accent);
+
+}
