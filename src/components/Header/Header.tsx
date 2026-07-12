@@ -1,12 +1,23 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
+
 import {
   HiOutlineMenu,
   HiOutlineX,
   HiChevronDown,
-  HiChevronRight
+  HiChevronRight,
+  HiOutlineLocationMarker,
+  HiOutlineFire,
+  HiOutlineSparkles,
+  HiOutlineCube,
+  HiOutlineGift,
+  HiOutlineInformationCircle,
+  HiOutlinePhone
 } from "react-icons/hi";
-import { FiShoppingCart } from "react-icons/fi";
+
+import {
+  FiShoppingCart
+} from "react-icons/fi";
 
 import styles from "./Header.module.css";
 import logo from "../../assets/images/logo.png";
@@ -21,8 +32,6 @@ export default function Header() {
   return (
     <>
 
-      {/* Overlay */}
-
       {menuOpen && (
         <div
           className={styles.overlay}
@@ -30,11 +39,9 @@ export default function Header() {
         />
       )}
 
-      {/* Header */}
-
       <header className={styles.header}>
 
-        <div className={styles.headerInner}>
+        <div className={styles.headerCard}>
 
           <button
             className={styles.iconButton}
@@ -47,27 +54,44 @@ export default function Header() {
             to="/"
             className={styles.logoContainer}
           >
+
             <img
               src={logo}
-              alt="Smoke Headquarters Plano"
+              alt="Smoke Headquarters"
               className={styles.logo}
             />
+
+            <div className={styles.storeInfo}>
+
+              <span className={styles.storeName}>
+                Smoke Headquarters
+              </span>
+
+              <span className={styles.storeLocation}>
+                <HiOutlineLocationMarker />
+                Plano • 15–20 min
+              </span>
+
+            </div>
+
           </Link>
 
           <button className={styles.cartButton}>
+
             <FiShoppingCart />
-            <span className={styles.cartBadge}>0</span>
+
+            <span className={styles.cartCount}>
+              0
+            </span>
+
           </button>
 
         </div>
 
       </header>
 
-      {/* Drawer */}
-
       <aside
-        className={`${styles.drawer}
-                ${menuOpen ? styles.drawerOpen : ""}`}
+        className={`${styles.drawer} ${menuOpen ? styles.drawerOpen : ""}`}
       >
 
         <div className={styles.drawerHeader}>
@@ -79,38 +103,54 @@ export default function Header() {
             <HiOutlineX />
           </button>
 
+        </div>
+
+        <div className={styles.drawerHero}>
+
           <img
             src={logo}
-            className={styles.drawerLogo}
             alt="Smoke HQ"
+            className={styles.drawerLogo}
           />
+
+          <h2>Smoke Headquarters</h2>
+
+          <p>
+            Premium THCA • Vapes • Glass
+          </p>
+
+          <span>
+            🚚 Free delivery over $75
+          </span>
 
         </div>
 
         <nav className={styles.nav}>
 
-
           <Link
             to="/deals"
             onClick={() => setMenuOpen(false)}
           >
-            🔥 Deals
+            <HiOutlineFire />
+            Deals
           </Link>
-
-          {/* THCA */}
 
           <button
             className={styles.expandButton}
-            onClick={() =>
-              setFlowerOpen(!flowerOpen)
-            }
+            onClick={() => setFlowerOpen(!flowerOpen)}
           >
 
-            THCA Flower
+            <span>
 
-            {flowerOpen ?
-              <HiChevronDown /> :
-              <HiChevronRight />}
+              <HiOutlineSparkles />
+
+              THCA Flower
+
+            </span>
+
+            {flowerOpen
+              ? <HiChevronDown />
+              : <HiChevronRight />}
 
           </button>
 
@@ -134,20 +174,22 @@ export default function Header() {
 
           )}
 
-          {/* Vapes */}
-
           <button
             className={styles.expandButton}
-            onClick={() =>
-              setVapeOpen(!vapeOpen)
-            }
+            onClick={() => setVapeOpen(!vapeOpen)}
           >
 
-            Disposable Vapes
+            <span>
 
-            {vapeOpen ?
-              <HiChevronDown /> :
-              <HiChevronRight />}
+              💨
+
+              Disposable Vapes
+
+            </span>
+
+            {vapeOpen
+              ? <HiChevronDown />
+              : <HiChevronRight />}
 
           </button>
 
@@ -171,16 +213,17 @@ export default function Header() {
 
           )}
 
-          <Link to="/catalog?category=kratom">
-            Kratom
-          </Link>
-
           <Link to="/catalog?category=glass">
+            <HiOutlineCube />
             Glass
           </Link>
 
           <Link to="/catalog?category=gummies">
-            Gummies
+            🍬 Gummies
+          </Link>
+
+          <Link to="/catalog?category=kratom">
+            🌿 Kratom
           </Link>
 
           <Link to="/catalog?category=cbd">
@@ -188,6 +231,7 @@ export default function Header() {
           </Link>
 
           <Link to="/catalog?category=accessories">
+            <HiOutlineGift />
             Accessories
           </Link>
 
@@ -198,10 +242,12 @@ export default function Header() {
           </Link>
 
           <Link to="/about">
+            <HiOutlineInformationCircle />
             About
           </Link>
 
           <Link to="/contact">
+            <HiOutlinePhone />
             Contact
           </Link>
 
