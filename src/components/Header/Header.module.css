@@ -14,9 +14,11 @@
     width: 100%;
     min-height: var(--header-height);
 
-    display: grid;
-    grid-template-columns: auto 1fr auto;
-    align-items: center;
+display: flex;
+
+justify-content: space-between;
+
+align-items: center;
 
     padding: 0 16px;
 
@@ -29,23 +31,34 @@
     box-shadow: var(--shadow-sm);
 }
 
+.leftSection {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 14px;
+
+}
+
 /* ==========================================================
    Logo
 ========================================================== */
 
 .logoContainer {
+
     display: flex;
+
     align-items: center;
-    justify-content: center;
-    justify-self: center;
 
     gap: var(--space-2);
 
     text-decoration: none;
+
 }
 
 .logo {
-    height: 62px;
+    height: 48px;
     width: auto;
 
     transition:
@@ -58,42 +71,16 @@
     opacity: .92;
 }
 
-.storeInfo {
-    display: flex;
-    flex-direction: column;
-    gap: 4px;
-}
-
-.storeName {
-    color: var(--text);
-
-    font-size: .95rem;
-
-    font-weight: 700;
-
-    letter-spacing: .25px;
-}
-
-.storeLocation {
-    display: flex;
-    align-items: center;
-
-    gap: 4px;
-
-    color: var(--text-secondary);
-
-    font-size: .80rem;
-}
-
 /* ==========================================================
    Buttons
 ========================================================== */
 
 .iconButton {
 
-    width: 48px;
-    height: 48px;
-
+    width: 44px;
+        height: 44px;
+    
+        font-size: 1.6rem;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -105,7 +92,6 @@
 
     color: var(--text);
 
-    font-size: 1.8rem;
 
     transition: var(--transition);
 

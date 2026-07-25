@@ -3,7 +3,7 @@
 ========================================================== */
 
 .container {
-    width: min(var(--max-content-width), calc(100% - 48px));
+    width: min(var(--max-content-width), calc(100% - 40px));
     margin: 0 auto;
 }
 
@@ -12,209 +12,47 @@ section {
 }
 
 /* ==========================================================
-   Hero
+   Shared Section Spacing
 ========================================================== */
 
-.hero {
-    min-height: 760px;
-
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
+.searchSection,
+.categories,
+.featured,
+.promo,
+.brands,
+.whyUs,
+.location,
+.cta {
+    padding: 32px 0;
 }
 
-.heroOverlay {
-    width: 100%;
-    min-height: inherit;
-
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
-    background:
-        linear-gradient(rgba(16, 20, 26, .82),
-            rgba(16, 20, 26, .60));
-}
-
-.heroContent {
-    width: min(760px, 90%);
-    text-align: center;
-
-    animation: fadeIn .8s ease;
-}
-
-.heroBadge {
-
-    display: inline-flex;
-
-    padding: 8px 18px;
-
-    margin-bottom: 28px;
-
-    border-radius: var(--radius-pill);
-
-    border: 1px solid rgba(200, 169, 106, .25);
-
-    background: rgba(200, 169, 106, .08);
-
-    color: var(--accent);
-
-    font-size: .82rem;
-
-    font-weight: 600;
-
-    letter-spacing: 2px;
-
-    text-transform: uppercase;
-
-}
-
-.heroContent h1 {
-
-    margin-bottom: 18px;
-
-    font-size: clamp(3.5rem, 7vw, 5.5rem);
-
-    font-weight: 800;
-
-    line-height: 1;
-
-}
-
-.heroContent h2 {
-
-    margin-bottom: 28px;
-
-    color: var(--accent);
-
-    font-size: clamp(1.2rem, 2.5vw, 1.8rem);
-
-    letter-spacing: 2px;
-
-    font-weight: 700;
-
-}
-
-.heroContent p {
-
-    margin: 0 auto;
-
-    color: var(--text-secondary);
-
-    font-size: 1.1rem;
-
-    line-height: 1.8;
-
-}
-
-.heroDescription {
-
-    max-width: 620px;
-
-    margin-top: 26px !important;
-
-    margin-bottom: 42px !important;
-
-}
-
-/* ==========================================================
-   Hero Buttons
-========================================================== */
-
-.heroButtons {
-
-    display: flex;
-
-    justify-content: center;
-
-    gap: 18px;
-
-    flex-wrap: wrap;
-
-}
-
-.primaryButton,
-.secondaryButton {
-
-    display: inline-flex;
-
-    align-items: center;
-    justify-content: center;
-
-    min-width: 210px;
-
-    padding: 16px 34px;
-
-    border-radius: var(--radius-pill);
-
-    font-weight: 700;
-
-    transition: var(--transition);
-
-}
-
-.primaryButton {
-
-    background: var(--accent);
-
-    color: #141414;
-
-    box-shadow: var(--shadow-md);
-
-}
-
-.primaryButton:hover {
-
-    background: var(--accent-hover);
-
-    transform: translateY(-2px);
-
-}
-
-.secondaryButton {
-
-    background: rgba(255, 255, 255, .05);
-
-    border: 1px solid var(--border);
-
-    backdrop-filter: blur(12px);
-
-}
-
-.secondaryButton:hover {
-
-    background: rgba(255, 255, 255, .08);
-
+.featured,
+.promo,
+.brands,
+.whyUs,
+.location,
+.cta {
+    padding-top: 64px;
 }
 
 /* ==========================================================
    Search
 ========================================================== */
 
-.searchSection {
-
-    padding: 42px 0;
-
-}
-
 .searchBar {
+
+    height: 60px;
 
     display: flex;
     align-items: center;
 
-    height: 62px;
-
     padding: 0 22px;
-
-    border-radius: var(--radius-pill);
 
     background: var(--surface);
 
     border: 1px solid var(--border);
+
+    border-radius: var(--radius-pill);
 
     color: var(--text-secondary);
 
@@ -226,17 +64,13 @@ section {
 
     border-color: rgba(200, 169, 106, .35);
 
+    background: var(--surface-light);
+
 }
 
 /* ==========================================================
    Categories
 ========================================================== */
-
-.categories {
-
-    padding-bottom: 70px;
-
-}
 
 .categoryScroller {
 
@@ -245,6 +79,8 @@ section {
     gap: 14px;
 
     overflow-x: auto;
+
+    padding-bottom: 6px;
 
     scrollbar-width: none;
 
@@ -260,6 +96,10 @@ section {
 
     flex-shrink: 0;
 
+    display: flex;
+    align-items: center;
+    gap: 8px;
+
     padding: 14px 22px;
 
     border-radius: var(--radius-pill);
@@ -267,6 +107,8 @@ section {
     background: var(--surface);
 
     border: 1px solid var(--border);
+
+    color: var(--text);
 
     font-weight: 600;
 
@@ -280,12 +122,102 @@ section {
 
     color: var(--accent);
 
-    border-color: rgba(200, 169, 106, .35);
+    border-color: rgba(200, 169, 106, .30);
 
 }
 
 /* ==========================================================
-   Shared Section Header
+   Promo Card
+========================================================== */
+
+.promoCard {
+
+    padding: 42px;
+
+    border-radius: var(--radius-lg);
+
+    background:
+        linear-gradient(135deg,
+            var(--surface-light),
+            var(--surface));
+
+    border: 1px solid var(--border);
+
+    box-shadow: var(--shadow-md);
+
+}
+
+.promoBadge {
+
+    display: inline-block;
+
+    margin-bottom: 14px;
+
+    color: var(--accent);
+
+    font-size: .8rem;
+
+    font-weight: 700;
+
+    letter-spacing: 1.5px;
+
+    text-transform: uppercase;
+
+}
+
+.promoCard h2 {
+
+    margin-bottom: 16px;
+
+    font-size: clamp(2rem, 4vw, 2.8rem);
+
+}
+
+.promoCard p {
+
+    max-width: 620px;
+
+    margin-bottom: 30px;
+
+    color: var(--text-secondary);
+
+}
+
+/* ==========================================================
+   Buttons
+========================================================== */
+
+.primaryButton {
+
+    display: inline-flex;
+
+    align-items: center;
+    justify-content: center;
+
+    padding: 16px 34px;
+
+    border-radius: var(--radius-pill);
+
+    background: var(--accent);
+
+    color: #111;
+
+    font-weight: 700;
+
+    transition: var(--transition);
+
+}
+
+.primaryButton:hover {
+
+    background: var(--accent-hover);
+
+    transform: translateY(-2px);
+
+}
+
+/* ==========================================================
+   Section Header
 ========================================================== */
 
 .sectionHeader {
@@ -304,7 +236,7 @@ section {
 
     margin: 0;
 
-    font-size: 2rem;
+    font-size: clamp(1.8rem, 3vw, 2.3rem);
 
 }
 
@@ -318,21 +250,21 @@ section {
 
 .sectionHeader a:hover {
 
-    opacity: .85;
+    opacity: .8;
 
 }
 
 /* ==========================================================
-   Sections
+   Product Grid
 ========================================================== */
 
-.featured,
-.brands,
-.whyUs,
-.location,
-.cta {
+.productGrid {
 
-    padding: 80px 0;
+    display: grid;
+
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+
+    gap: 24px;
 
 }
 
@@ -348,6 +280,8 @@ section {
 
     overflow-x: auto;
 
+    padding-bottom: 8px;
+
     scrollbar-width: none;
 
 }
@@ -358,21 +292,76 @@ section {
 
 }
 
-.brandScroller img {
+/* ==========================================================
+   Features
+========================================================== */
 
-    height: 56px;
+.features {
 
-    opacity: .7;
+    display: grid;
+
+    grid-template-columns: repeat(4, 1fr);
+
+    gap: 18px;
+
+}
+
+.feature {
+
+    padding: 22px;
+
+    text-align: center;
+
+    background: var(--surface);
+
+    border: 1px solid var(--border);
+
+    border-radius: var(--radius-md);
 
     transition: var(--transition);
 
 }
 
-.brandScroller img:hover {
+.feature:hover {
 
-    opacity: 1;
+    border-color: rgba(200, 169, 106, .30);
 
-    transform: scale(1.04);
+    transform: translateY(-3px);
+
+}
+
+/* ==========================================================
+   Location
+========================================================== */
+
+.locationContent {
+
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+
+    gap: 40px;
+
+    align-items: stretch;
+
+}
+
+.mapPlaceholder {
+
+    min-height: 320px;
+
+    display: flex;
+
+    justify-content: center;
+    align-items: center;
+
+    background: var(--surface);
+
+    border: 1px solid var(--border);
+
+    border-radius: var(--radius-lg);
+
+    color: var(--text-secondary);
 
 }
 
@@ -390,15 +379,13 @@ section {
 
     margin-bottom: 18px;
 
-    font-size: 2.4rem;
-
 }
 
 .cta p {
 
-    max-width: 640px;
+    max-width: 620px;
 
-    margin: 0 auto 36px;
+    margin: 0 auto 34px;
 
     color: var(--text-secondary);
 
@@ -408,30 +395,46 @@ section {
    Responsive
 ========================================================== */
 
+@media (max-width:900px) {
+
+    .features {
+
+        grid-template-columns: repeat(2, 1fr);
+
+    }
+
+    .locationContent {
+
+        grid-template-columns: 1fr;
+
+    }
+
+}
+
 @media (max-width:768px) {
 
-    .hero {
+    .searchSection,
+    .categories,
+    .featured,
+    .promo,
+    .brands,
+    .whyUs,
+    .location,
+    .cta {
 
-        min-height: 640px;
-
-    }
-
-    .heroContent h1 {
-
-        font-size: 3rem;
-
-    }
-
-    .heroButtons {
-
-        flex-direction: column;
+        padding: 24px 0;
 
     }
 
-    .primaryButton,
-    .secondaryButton {
+    .promoCard {
 
-        width: 100%;
+        padding: 30px;
+
+    }
+
+    .features {
+
+        grid-template-columns: 1fr;
 
     }
 
@@ -442,28 +445,6 @@ section {
         align-items: flex-start;
 
         gap: 10px;
-
-    }
-
-}
-
-/* ==========================================================
-   Animation
-========================================================== */
-
-@keyframes fadeIn {
-
-    from {
-
-        opacity: 0;
-        transform: translateY(20px);
-
-    }
-
-    to {
-
-        opacity: 1;
-        transform: translateY(0);
 
     }
 

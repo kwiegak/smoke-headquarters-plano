@@ -1,69 +1,15 @@
 import styles from "./Home.module.css";
-import hero from "../../assets/images/home-banner.png";
 import { Link } from "react-router-dom";
 
 export default function Home() {
     return (
         <>
             {/* ==========================================================
-                Hero
-            ========================================================== */}
-
-            <section
-                className={styles.hero}
-                style={{ backgroundImage: `url(${hero})` }}
-            >
-                <div className={styles.heroOverlay}>
-                    <div className={styles.heroContent}>
-
-                        <span className={styles.heroBadge}>
-                            Premium Smoke Boutique
-                        </span>
-
-                        <h1>
-                            Smoke Headquarters
-                        </h1>
-
-                        <h2>
-                            Curated Premium Cannabis Alternatives
-                        </h2>
-
-                        <p>
-                            THCA Flower • Vapes • Kratom • Glass • CBD
-                        </p>
-
-                        <p className={styles.heroDescription}>
-                            Discover premium products from the industry's
-                            most trusted brands.
-                        </p>
-
-                        <div className={styles.heroButtons}>
-
-                            <Link
-                                to="/catalog"
-                                className={styles.primaryButton}
-                            >
-                                Shop Collection
-                            </Link>
-
-                            <a
-                                href="#location"
-                                className={styles.secondaryButton}
-                            >
-                                Visit Store
-                            </a>
-
-                        </div>
-
-                    </div>
-                </div>
-            </section>
-
-            {/* ==========================================================
                 Search
             ========================================================== */}
 
             <section className={styles.searchSection}>
+
                 <div className={styles.container}>
 
                     <div className={styles.searchBar}>
@@ -71,6 +17,7 @@ export default function Home() {
                     </div>
 
                 </div>
+
             </section>
 
             {/* ==========================================================
@@ -84,27 +31,67 @@ export default function Home() {
                     <div className={styles.categoryScroller}>
 
                         <Link to="/catalog?category=flower">
-                            Flower
+                            🌿 Flower
                         </Link>
 
                         <Link to="/catalog?category=vapes">
-                            Vapes
+                            💨 Vapes
+                        </Link>
+
+                        <Link to="/catalog?category=thca">
+                            🧪 THCA
                         </Link>
 
                         <Link to="/catalog?category=kratom">
-                            Kratom
+                            🌱 Kratom
                         </Link>
 
                         <Link to="/catalog?category=glass">
-                            Glass
+                            💎 Glass
                         </Link>
 
                         <Link to="/catalog?category=cbd">
-                            CBD
+                            🍃 CBD
                         </Link>
 
                         <Link to="/catalog?category=edibles">
-                            Edibles
+                            🍬 Edibles
+                        </Link>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+            {/* ==========================================================
+                Weekly Promotion
+            ========================================================== */}
+
+            <section className={styles.promo}>
+
+                <div className={styles.container}>
+
+                    <div className={styles.promoCard}>
+
+                        <span className={styles.promoBadge}>
+                            New Arrival
+                        </span>
+
+                        <h2>
+                            Premium THCA Flower
+                        </h2>
+
+                        <p>
+                            Explore our newest collection of premium flower,
+                            vapes, edibles and accessories.
+                        </p>
+
+                        <Link
+                            to="/catalog"
+                            className={styles.primaryButton}
+                        >
+                            Shop Now
                         </Link>
 
                     </div>
@@ -133,14 +120,18 @@ export default function Home() {
 
                     </div>
 
-                    {/* Product Grid */}
+                    <div className={styles.productGrid}>
+
+                        {/* Product Cards */}
+
+                    </div>
 
                 </div>
 
             </section>
 
             {/* ==========================================================
-                Featured Brands
+                Shop by Brand
             ========================================================== */}
 
             <section className={styles.brands}>
@@ -150,18 +141,18 @@ export default function Home() {
                     <div className={styles.sectionHeader}>
 
                         <h2>
-                            Shop Top Brands
+                            Shop by Brand
                         </h2>
 
                         <Link to="/brands">
-                            Browse Brands →
+                            Browse All →
                         </Link>
 
                     </div>
 
                     <div className={styles.brandScroller}>
 
-                        {/* Brand logos */}
+                        {/* Brand Logos */}
 
                     </div>
 
@@ -170,22 +161,32 @@ export default function Home() {
             </section>
 
             {/* ==========================================================
-                Why Smoke Headquarters
+                Why Shop Here
             ========================================================== */}
 
             <section className={styles.whyUs}>
 
                 <div className={styles.container}>
 
-                    <div className={styles.sectionHeader}>
+                    <div className={styles.features}>
 
-                        <h2>
-                            Why Smoke Headquarters
-                        </h2>
+                        <div className={styles.feature}>
+                            ✅ Premium Brands
+                        </div>
+
+                        <div className={styles.feature}>
+                            🧪 Lab Tested Products
+                        </div>
+
+                        <div className={styles.feature}>
+                            🚗 Local Pickup
+                        </div>
+
+                        <div className={styles.feature}>
+                            ⭐ Friendly Staff
+                        </div>
 
                     </div>
-
-                    {/* Feature cards */}
 
                 </div>
 
@@ -202,18 +203,50 @@ export default function Home() {
 
                 <div className={styles.container}>
 
-                    {/* Address */}
+                    <div className={styles.sectionHeader}>
 
-                    {/* Store Hours */}
+                        <h2>
+                            Visit Smoke Headquarters
+                        </h2>
 
-                    {/* Google Map */}
+                    </div>
+
+                    <div className={styles.locationContent}>
+
+                        <div>
+
+                            <h3>
+                                Plano, Texas
+                            </h3>
+
+                            <p>
+                                Premium cannabis alternatives,
+                                glass, kratom, CBD, accessories
+                                and more.
+                            </p>
+
+                            <p>
+                                Monday - Saturday
+                                <br />
+                                10:00 AM - 9:00 PM
+                            </p>
+
+                        </div>
+
+                        <div className={styles.mapPlaceholder}>
+
+                            Google Map
+
+                        </div>
+
+                    </div>
 
                 </div>
 
             </section>
 
             {/* ==========================================================
-                CTA
+                Footer CTA
             ========================================================== */}
 
             <section className={styles.cta}>
@@ -221,19 +254,19 @@ export default function Home() {
                 <div className={styles.container}>
 
                     <h2>
-                        Experience the Difference
+                        Ready to Shop?
                     </h2>
 
                     <p>
-                        Premium products. Trusted brands.
-                        Exceptional service.
+                        Browse hundreds of premium products from the industry's
+                        most trusted brands.
                     </p>
 
                     <Link
                         to="/catalog"
                         className={styles.primaryButton}
                     >
-                        Shop Collection
+                        Browse Catalog
                     </Link>
 
                 </div>
