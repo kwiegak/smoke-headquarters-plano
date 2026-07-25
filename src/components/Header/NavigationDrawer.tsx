@@ -1,13 +1,10 @@
 import { type Dispatch, type SetStateAction } from "react";
 import { Link } from "react-router-dom";
-
 import {
     HiOutlineX,
     HiChevronRight
 } from "react-icons/hi";
-
 import DrawerAccordion from "./DrawerAccordion";
-
 import styles from "./NavigationDrawer.module.css";
 
 interface NavigationDrawerProps {
@@ -104,21 +101,17 @@ export default function NavigationDrawer({
 
     return (
         <>
-
             {menuOpen && (
                 <div
                     className={styles.overlay}
                     onClick={onClose}
                 />
             )}
-
             <aside
                 className={`${styles.drawer} ${menuOpen ? styles.drawerOpen : ""}`}
                 aria-hidden={!menuOpen}
             >
-
                 <div className={styles.drawerCard}>
-
                     <button
                         className={styles.closeButton}
                         onClick={onClose}
@@ -126,19 +119,14 @@ export default function NavigationDrawer({
                     >
                         <HiOutlineX />
                     </button>
-
                     <nav className={styles.nav}>
-
                         {navigationItems.map((item) => {
-
                             if (item.children) {
-
                                 return (
                                     <DrawerAccordion
                                         key={item.title}
                                         title={item.title}
                                     >
-
                                         {item.children.map((child) => (
 
                                             <Link
@@ -148,12 +136,9 @@ export default function NavigationDrawer({
                                             >
                                                 {child.label}
                                             </Link>
-
                                         ))}
-
                                     </DrawerAccordion>
                                 );
-
                             }
 
                             return (
@@ -163,22 +148,14 @@ export default function NavigationDrawer({
                                     onClick={onClose}
                                     className={styles.navLink}
                                 >
-
                                     <span>{item.title}</span>
-
                                     <HiChevronRight />
-
                                 </Link>
                             );
-
                         })}
-
                     </nav>
-
                 </div>
-
             </aside>
-
         </>
     );
 }

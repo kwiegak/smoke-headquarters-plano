@@ -3,51 +3,25 @@
 ========================================================== */
 
 .header {
-
     position: sticky;
-
     top: 0;
-
     z-index: 500;
-
-    padding: var(--space-2);
-
-    display: flex;
-
-    justify-content: center;
-
+    width: 100%;
+    padding: 0;
 }
 
-/* ==========================================================
-   Floating Header Card
-========================================================== */
-
 .headerCard {
-
-    width: min(var(--max-content-width), 100%);
-
+    width: 100%;
     min-height: var(--header-height);
-
     display: grid;
-
     grid-template-columns: auto 1fr auto;
-
     align-items: center;
-
-    column-gap: var(--space-2);
-
-    padding: 0 var(--space-2);
-
-    border-radius: var(--radius-lg);
-
+    padding: 0 16px;
     background: rgba(23, 27, 34, .90);
-
-    backdrop-filter: blur(18px);
-
     border: 1px solid var(--border);
-
+    border-radius: 0;
+    backdrop-filter: blur(18px);
     box-shadow: var(--shadow-lg);
-
 }
 
 /* ==========================================================
@@ -55,69 +29,43 @@
 ========================================================== */
 
 .logoContainer {
-
     display: flex;
-
     align-items: center;
-
     justify-content: center;
-
     justify-self: center;
-
     gap: var(--space-2);
-
+    text-decoration: none;
 }
 
 .logo {
-
     height: 62px;
-
     width: auto;
-
     transition: transform var(--transition);
-
 }
 
 .logo:hover {
-
     transform: scale(1.04);
-
 }
 
 .storeInfo {
-
     display: flex;
-
     flex-direction: column;
-
     gap: 4px;
-
 }
 
 .storeName {
-
     color: var(--text);
-
     font-size: .95rem;
-
     font-weight: 700;
-
     letter-spacing: .3px;
-
 }
 
 .storeLocation {
-
     display: flex;
-
     align-items: center;
-
     gap: 4px;
-
     color: var(--text-secondary);
-
     font-size: .80rem;
-
 }
 
 /* ==========================================================
@@ -125,83 +73,50 @@
 ========================================================== */
 
 .iconButton {
-
     width: 48px;
-
     height: 48px;
-
     display: flex;
-
     align-items: center;
-
     justify-content: center;
-
     border: none;
-
     border-radius: var(--radius-md);
-
     background: transparent;
-
     color: var(--text);
-
     font-size: 1.8rem;
-
+    cursor: pointer;
     transition: var(--transition);
-
 }
 
 .iconButton:hover {
-
     background: rgba(255, 255, 255, .06);
-
     color: var(--accent);
-
 }
 
 .cartButton {
-
     display: flex;
-
     align-items: center;
-
     justify-content: center;
-
     gap: 6px;
-
     height: 48px;
-
     min-width: 64px;
-
     padding: 0 16px;
-
     border: none;
-
     border-radius: var(--radius-pill);
-
     background: var(--accent);
-
     color: #111;
-
     font-weight: 700;
-
     font-size: 1rem;
-
+    cursor: pointer;
     transition: var(--transition);
-
 }
 
 .cartButton:hover {
-
     transform: translateY(-2px);
-
     box-shadow: 0 8px 24px rgba(245, 158, 11, .30);
-
 }
 
 .cartCount {
-
     font-size: .9rem;
-
 }
 
 /* ==========================================================
@@ -209,17 +124,11 @@
 ========================================================== */
 
 .overlay {
-
     position: fixed;
-
     inset: 0;
-
     background: rgba(0, 0, 0, .55);
-
     backdrop-filter: blur(3px);
-
     z-index: 900;
-
 }
 
 /* ==========================================================
@@ -227,37 +136,22 @@
 ========================================================== */
 
 .drawer {
-
     position: fixed;
-
     top: 0;
-
     left: calc(-1 * var(--drawer-width));
-
     width: var(--drawer-width);
-
     max-width: 88vw;
-
     height: 100vh;
-
     background: var(--surface);
-
     border-right: 1px solid var(--border);
-
     box-shadow: var(--shadow-lg);
-
     overflow-y: auto;
-
     transition: left var(--transition-slow);
-
     z-index: 1000;
-
 }
 
 .drawerOpen {
-
     left: 0;
-
 }
 
 /* ==========================================================
@@ -265,15 +159,10 @@
 ========================================================== */
 
 .drawerHeader {
-
     height: var(--header-height);
-
     display: flex;
-
     align-items: center;
-
     padding: 0 var(--space-3);
-
 }
 
 /* ==========================================================
@@ -281,57 +170,35 @@
 ========================================================== */
 
 .drawerHero {
-
     display: flex;
-
     flex-direction: column;
-
     align-items: center;
-
     text-align: center;
-
     padding: var(--space-3);
-
     border-bottom: 1px solid var(--border);
-
 }
 
 .drawerLogo {
-
     height: 70px;
-
     margin-bottom: var(--space-2);
-
 }
 
 .drawerHero h2 {
-
     margin-bottom: 6px;
-
 }
 
 .drawerHero p {
-
     color: var(--text-secondary);
-
     margin-bottom: var(--space-3);
-
 }
 
 .drawerHero span {
-
     padding: 10px 16px;
-
     border-radius: var(--radius-pill);
-
     background: rgba(245, 158, 11, .15);
-
     color: var(--accent);
-
     font-size: .85rem;
-
     font-weight: 600;
-
 }
 
 /* ==========================================================
@@ -339,91 +206,56 @@
 ========================================================== */
 
 .nav {
-
     display: flex;
-
     flex-direction: column;
-
     padding: var(--space-2) 0;
-
 }
 
 .nav a,
 .expandButton {
-
     display: flex;
-
     justify-content: space-between;
-
     align-items: center;
-
     gap: var(--space-2);
-
     padding: var(--space-2) var(--space-3);
-
     color: var(--text);
-
     font-size: 1rem;
-
     font-weight: 600;
-
     background: none;
-
     border: none;
-
     transition: var(--transition);
-
 }
 
 .nav a:hover,
 .expandButton:hover {
-
     background: rgba(255, 255, 255, .04);
-
     color: var(--accent);
-
 }
 
 .expandButton span {
-
     display: flex;
-
     align-items: center;
-
     gap: var(--space-2);
-
 }
 
 .subMenu {
-
     display: flex;
-
     flex-direction: column;
-
     background: rgba(255, 255, 255, .02);
-
 }
 
 .subMenu a {
-
     padding-left: calc(var(--space-3) * 2.5);
-
     color: var(--text-secondary);
-
     font-size: .92rem;
-
 }
 
 .subMenu a:hover {
-
     color: var(--accent);
-
 }
 
 .nav hr {
-
     margin: var(--space-2) var(--space-3);
-
 }
 
 /* ==========================================================
@@ -431,39 +263,24 @@
 ========================================================== */
 
 @media (max-width: 640px) {
-
     .header {
-
-        padding: var(--space-1);
-
+        padding: 0;
     }
 
     .headerCard {
-
-        padding: 0 var(--space-2);
-
-        border-radius: var(--radius-md);
-
+        padding: 0 16px;
+        border-radius: 0;
     }
 
     .storeInfo {
-
         display: none;
-
     }
 
     .logo {
-
         height: 60px;
-
-        width: auto;
-
     }
 
     .cartButton {
-
         padding: 10px 14px;
-
     }
-
 }
