@@ -13,15 +13,20 @@
 .headerCard {
     width: 100%;
     min-height: var(--header-height);
+
     display: grid;
     grid-template-columns: auto 1fr auto;
     align-items: center;
+
     padding: 0 16px;
-    background: rgba(23, 27, 34, .90);
-    border: 1px solid var(--border);
-    border-radius: 0;
+
+    background: rgba(29, 34, 41, .92);
+
     backdrop-filter: blur(18px);
-    box-shadow: var(--shadow-lg);
+
+    border-bottom: 1px solid rgba(200, 169, 106, .15);
+
+    box-shadow: var(--shadow-sm);
 }
 
 /* ==========================================================
@@ -33,18 +38,24 @@
     align-items: center;
     justify-content: center;
     justify-self: center;
+
     gap: var(--space-2);
+
     text-decoration: none;
 }
 
 .logo {
     height: 62px;
     width: auto;
-    transition: transform var(--transition);
+
+    transition:
+        transform var(--transition),
+        opacity var(--transition);
 }
 
 .logo:hover {
-    transform: scale(1.04);
+    transform: scale(1.03);
+    opacity: .92;
 }
 
 .storeInfo {
@@ -55,16 +66,22 @@
 
 .storeName {
     color: var(--text);
+
     font-size: .95rem;
+
     font-weight: 700;
-    letter-spacing: .3px;
+
+    letter-spacing: .25px;
 }
 
 .storeLocation {
     display: flex;
     align-items: center;
+
     gap: 4px;
+
     color: var(--text-secondary);
+
     font-size: .80rem;
 }
 
@@ -73,50 +90,83 @@
 ========================================================== */
 
 .iconButton {
+
     width: 48px;
     height: 48px;
+
     display: flex;
-    align-items: center;
     justify-content: center;
+    align-items: center;
+
     border: none;
     border-radius: var(--radius-md);
+
     background: transparent;
+
     color: var(--text);
+
     font-size: 1.8rem;
-    cursor: pointer;
+
     transition: var(--transition);
+
 }
 
 .iconButton:hover {
-    background: rgba(255, 255, 255, .06);
+
+    background: rgba(255, 255, 255, .05);
+
     color: var(--accent);
+
 }
 
 .cartButton {
+
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 6px;
+
+    gap: 8px;
+
     height: 48px;
-    min-width: 64px;
-    padding: 0 16px;
-    border: none;
+
+    min-width: 70px;
+
+    padding: 0 18px;
+
+    border: 1px solid var(--border-light);
+
     border-radius: var(--radius-pill);
-    background: var(--accent);
-    color: #111;
-    font-weight: 700;
-    font-size: 1rem;
-    cursor: pointer;
+
+    background: rgba(255, 255, 255, .04);
+
+    color: var(--text);
+
+    font-weight: 600;
+
     transition: var(--transition);
+
 }
 
 .cartButton:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 8px 24px rgba(245, 158, 11, .30);
+
+    background: rgba(200, 169, 106, .12);
+
+    border-color: rgba(200, 169, 106, .35);
+
+    color: var(--accent);
+
+    transform: translateY(-1px);
+
 }
 
 .cartCount {
-    font-size: .9rem;
+
+    color: var(--accent);
+
+    font-weight: 700;
+
+    font-size: .85rem;
+
 }
 
 /* ==========================================================
@@ -124,11 +174,17 @@
 ========================================================== */
 
 .overlay {
+
     position: fixed;
+
     inset: 0;
+
     background: rgba(0, 0, 0, .55);
-    backdrop-filter: blur(3px);
+
+    backdrop-filter: blur(4px);
+
     z-index: 900;
+
 }
 
 /* ==========================================================
@@ -136,22 +192,37 @@
 ========================================================== */
 
 .drawer {
+
     position: fixed;
+
     top: 0;
+
     left: calc(-1 * var(--drawer-width));
+
     width: var(--drawer-width);
+
     max-width: 88vw;
+
     height: 100vh;
+
     background: var(--surface);
+
     border-right: 1px solid var(--border);
+
     box-shadow: var(--shadow-lg);
+
     overflow-y: auto;
+
     transition: left var(--transition-slow);
+
     z-index: 1000;
+
 }
 
 .drawerOpen {
+
     left: 0;
+
 }
 
 /* ==========================================================
@@ -159,10 +230,17 @@
 ========================================================== */
 
 .drawerHeader {
+
     height: var(--header-height);
+
     display: flex;
+
     align-items: center;
+
     padding: 0 var(--space-3);
+
+    border-bottom: 1px solid var(--border);
+
 }
 
 /* ==========================================================
@@ -170,35 +248,59 @@
 ========================================================== */
 
 .drawerHero {
+
     display: flex;
+
     flex-direction: column;
+
     align-items: center;
+
     text-align: center;
+
     padding: var(--space-3);
+
     border-bottom: 1px solid var(--border);
+
 }
 
 .drawerLogo {
+
     height: 70px;
+
     margin-bottom: var(--space-2);
+
 }
 
 .drawerHero h2 {
+
     margin-bottom: 6px;
+
 }
 
 .drawerHero p {
+
     color: var(--text-secondary);
+
     margin-bottom: var(--space-3);
+
 }
 
 .drawerHero span {
-    padding: 10px 16px;
+
+    padding: 10px 18px;
+
     border-radius: var(--radius-pill);
-    background: rgba(245, 158, 11, .15);
+
+    background: rgba(200, 169, 106, .10);
+
     color: var(--accent);
+
+    border: 1px solid rgba(200, 169, 106, .20);
+
     font-size: .85rem;
+
     font-weight: 600;
+
 }
 
 /* ==========================================================
@@ -206,56 +308,91 @@
 ========================================================== */
 
 .nav {
+
     display: flex;
+
     flex-direction: column;
+
     padding: var(--space-2) 0;
+
 }
 
 .nav a,
 .expandButton {
+
     display: flex;
+
     justify-content: space-between;
+
     align-items: center;
+
     gap: var(--space-2);
+
     padding: var(--space-2) var(--space-3);
+
     color: var(--text);
+
     font-size: 1rem;
+
     font-weight: 600;
-    background: none;
+
+    background: transparent;
+
     border: none;
+
     transition: var(--transition);
+
 }
 
 .nav a:hover,
 .expandButton:hover {
+
     background: rgba(255, 255, 255, .04);
+
     color: var(--accent);
+
 }
 
 .expandButton span {
+
     display: flex;
+
     align-items: center;
+
     gap: var(--space-2);
+
 }
 
 .subMenu {
+
     display: flex;
+
     flex-direction: column;
+
     background: rgba(255, 255, 255, .02);
+
 }
 
 .subMenu a {
+
     padding-left: calc(var(--space-3) * 2.5);
+
     color: var(--text-secondary);
+
     font-size: .92rem;
+
 }
 
 .subMenu a:hover {
+
     color: var(--accent);
+
 }
 
 .nav hr {
+
     margin: var(--space-2) var(--space-3);
+
 }
 
 /* ==========================================================
@@ -263,24 +400,237 @@
 ========================================================== */
 
 @media (max-width: 640px) {
+
     .header {
+
         padding: 0;
+
     }
 
     .headerCard {
+
         padding: 0 16px;
-        border-radius: 0;
+
     }
 
     .storeInfo {
+
         display: none;
+
     }
 
     .logo {
+
         height: 60px;
+
     }
 
     .cartButton {
-        padding: 10px 14px;
+
+        padding: 0 14px;
+
+        min-width: 62px;
+
     }
+
+}
+
+/* ==========================================================
+   Hero Badge
+========================================================== */
+
+.heroBadge {
+    display: inline-flex;
+    align-items: center;
+
+    padding: 8px 18px;
+
+    margin-bottom: 26px;
+
+    border: 1px solid rgba(200, 169, 106, .28);
+
+    border-radius: var(--radius-pill);
+
+    background: rgba(200, 169, 106, .08);
+
+    color: var(--accent);
+
+    font-size: .90rem;
+
+    font-weight: 600;
+
+    letter-spacing: .6px;
+
+    text-transform: uppercase;
+}
+
+/* ==========================================================
+   Search
+========================================================== */
+
+.searchSection {
+    padding: 32px 0;
+}
+
+.searchBar {
+    width: 100%;
+
+    height: 64px;
+
+    display: flex;
+    align-items: center;
+
+    padding: 0 24px;
+
+    background: var(--surface-light);
+
+    border: 1px solid var(--border);
+
+    border-radius: var(--radius-pill);
+
+    color: var(--text-secondary);
+
+    font-size: 1rem;
+
+    transition: var(--transition);
+}
+
+.searchBar:hover {
+
+    border-color: rgba(200, 169, 106, .30);
+
+    background: rgba(255, 255, 255, .03);
+
+}
+
+/* ==========================================================
+   Category Scroller
+========================================================== */
+
+.categoryScroller {
+
+    display: flex;
+
+    gap: 16px;
+
+    overflow-x: auto;
+
+    padding-bottom: 8px;
+
+    scrollbar-width: none;
+
+}
+
+.categoryScroller::-webkit-scrollbar {
+
+    display: none;
+
+}
+
+.categoryScroller a {
+
+    flex-shrink: 0;
+
+    padding: 14px 24px;
+
+    border-radius: var(--radius-pill);
+
+    background: var(--surface);
+
+    border: 1px solid var(--border);
+
+    color: var(--text);
+
+    font-weight: 600;
+
+    transition: var(--transition);
+
+}
+
+.categoryScroller a:hover {
+
+    background: rgba(200, 169, 106, .10);
+
+    border-color: rgba(200, 169, 106, .35);
+
+    color: var(--accent);
+
+}
+
+/* ==========================================================
+   Shared Section Header
+========================================================== */
+
+.sectionHeader {
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    margin-bottom: 32px;
+
+}
+
+.sectionHeader h2 {
+
+    margin: 0;
+
+}
+
+.sectionHeader a {
+
+    color: var(--accent);
+
+    font-weight: 600;
+
+}
+
+.sectionHeader a:hover {
+
+    opacity: .8;
+
+}
+
+/* ==========================================================
+   Brand Scroller
+========================================================== */
+
+.brandScroller {
+
+    display: flex;
+
+    gap: 24px;
+
+    overflow-x: auto;
+
+    padding: 8px 0;
+
+    scrollbar-width: none;
+
+}
+
+.brandScroller::-webkit-scrollbar {
+
+    display: none;
+
+}
+
+.brandScroller img {
+
+    height: 56px;
+
+    opacity: .70;
+
+    transition: var(--transition);
+
+}
+
+.brandScroller img:hover {
+
+    opacity: 1;
+
+    transform: scale(1.04);
+
 }
