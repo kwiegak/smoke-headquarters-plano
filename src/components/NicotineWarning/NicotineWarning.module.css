@@ -1,0 +1,21 @@
+.nicotineWarning {
+    width: 100%;
+    box-sizing: border-box;
+    padding: 18px 20px;
+    background: rgba(18, 20, 25, .94);
+    color: var(--text);
+    text-align: center;
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 1.4;
+
+    border-bottom: 1px solid rgba(200, 169, 106, .12);
+}
+
+.nicotineWarning p {
+    margin: 0;
+}
+
+.nicotineWarning p+p {
+    margin-top: 18px;
+}
