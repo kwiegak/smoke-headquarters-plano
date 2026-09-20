@@ -19,7 +19,7 @@ export default function Header() {
 
             <button
               className={styles.iconButton}
-              onClick={() => setMenuOpen(true)}
+              onClick={() => setMenuOpen(!menuOpen)}
               aria-label="Open navigation"
             >
               <HiOutlineMenu />
