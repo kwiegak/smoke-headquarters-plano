@@ -12,80 +12,74 @@
 }
 
 .drawerCard {
-
     position: absolute;
 
-    top: 92px;
+    top: 64px;
+    /* match your actual header height */
+    left: 0;
 
-    left: 18px;
+    width: 100%;
+    height: calc(100vh - 64px);
 
-    width: 340px;
+    background: var(--surface);
+    border: none;
+    border-radius: 0;
 
-    max-width: calc(100vw - 36px);
+    overflow-y: auto;
 
-    background: white;
-
-    border-radius: 16px;
-
-    overflow: visible;
-
-    transform: translateX(-110%);
-
+    transform: translateX(-100%);
     transition: transform .30s ease;
 
     pointer-events: auto;
 
-    box-shadow:
-        0 18px 45px rgba(0, 0, 0, .30);
-
+    box-shadow: var(--shadow-lg);
 }
-
 
 .drawerOpen .drawerCard {
-
     transform: translateX(0);
-
 }
 
-
 /* ==========================================================
-   Floating Close Button
+   Close Button
 ========================================================== */
 
 .closeButton {
 
     position: absolute;
 
-    left: calc(18px + 170px);
-    transform: translateX(-50%);
+    top: 16px;
+    right: 16px;
 
-    transform: translateX(-50%);
+    width: 44px;
+    height: 44px;
 
-    width: 58px;
-    height: 58px;
-
-    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 
     border: none;
+    border-radius: 50%;
 
-    background: white;
+    background: var(--accent);
+    color: var(--background);
 
-    box-shadow:
-        0 10px 24px rgba(0, 0, 0, .20);
+    box-shadow: var(--shadow-sm);
 
     z-index: 5;
 
-        transition:
-                transform .2s ease,
-                box-shadow .2s ease;
-    
-
+    transition:
+        transform var(--transition-fast),
+        background var(--transition-fast),
+        box-shadow var(--transition-fast);
 }
 
 .closeButton:hover {
 
-    transform: translateX(-50%) scale(1.05);
+    background: var(--accent-hover);
 
+    transform: scale(1.05);
+
+    box-shadow: var(--shadow-md);
 }
 
 /* ==========================================================
@@ -93,13 +87,9 @@
 ========================================================== */
 
 .nav {
-
     display: flex;
-
     flex-direction: column;
-
-    padding: 90px 0 40px;
-
+    padding: 20px 0 40px;
 }
 
 /* ==========================================================
@@ -123,7 +113,7 @@
 
     border: none;
 
-    color: #222;
+    color: var(--text);
 
     text-decoration: none;
 
@@ -131,17 +121,14 @@
 
     font-weight: 700;
 
-    transition: .2s;
+    transition: var(--transition);
 
     cursor: pointer;
-
 }
 
 .navLink:hover,
 .expandButton:hover {
-
-    background: #f7f7f7;
-
+    background: var(--surface-light);
 }
 
 .navLink svg,
@@ -158,35 +145,22 @@
 ========================================================== */
 
 .subMenu {
-
     display: flex;
-
     flex-direction: column;
-
-    background: #fafafa;
-
+    background: var(--background);
 }
 
 .subMenu a {
-
     padding: 16px 50px;
-
     text-decoration: none;
-
-    color: #666;
-
+    color: var(--text-secondary);
     font-size: 1.05rem;
-
-    transition: .2s;
-
+    transition: var(--transition);
 }
 
 .subMenu a:hover {
-
-    background: white;
-
-    color: #111;
-
+    background: var(--surface-light);
+    color: var(--text);
 }
 
 /* ==========================================================

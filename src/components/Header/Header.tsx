@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
-import { HiOutlineMenu,HiOutlineLocationMarker } from "react-icons/hi";
+import { HiOutlineMenu } from "react-icons/hi";
 import { FiShoppingCart } from "react-icons/fi";
 import styles from "./Header.module.css";
 import logo from "../../assets/images/logo.png";
@@ -30,6 +30,7 @@ export default function Header() {
               className={styles.logoContainer}
             >
               <img
+                onClick={() => setMenuOpen(false)}
                 src={logo}
                 alt="Smoke Headquarters"
                 className={styles.logo}
