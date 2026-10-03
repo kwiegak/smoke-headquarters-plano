@@ -1,0 +1,180 @@
+/* ==========================================================
+   Age Verification Overlay
+========================================================== */
+
+.overlay {
+    position: fixed;
+
+    inset: 0;
+
+    z-index: 9999;
+
+    display: flex;
+
+    justify-content: center;
+    align-items: center;
+
+    padding: 20px;
+
+    background: rgba(0, 0, 0, .72);
+
+    backdrop-filter: blur(8px);
+}
+
+
+/* ==========================================================
+   Modal
+========================================================== */
+
+.modal {
+    width: min(420px, 100%);
+
+    padding: 40px 34px;
+
+    text-align: center;
+
+    background: var(--surface-light);
+
+    border: 1px solid rgba(200, 169, 106, .25);
+
+    border-radius: var(--radius-lg);
+
+    box-shadow:
+        0 25px 80px rgba(0, 0, 0, .55);
+}
+
+
+/* ==========================================================
+   21+ Mark
+========================================================== */
+
+.logoMark {
+    width: 64px;
+    height: 64px;
+
+    display: flex;
+
+    justify-content: center;
+    align-items: center;
+
+    margin: 0 auto 22px;
+
+    border-radius: 50%;
+
+    background: rgba(200, 169, 106, .10);
+
+    border: 1px solid rgba(200, 169, 106, .35);
+
+    color: var(--accent);
+
+    font-size: 1.1rem;
+
+    font-weight: 800;
+}
+
+
+/* ==========================================================
+   Content
+========================================================== */
+
+.modal h2 {
+    margin: 0 0 14px;
+
+    font-size: 1.7rem;
+}
+
+.modal p {
+    margin: 0 auto 28px;
+
+    max-width: 320px;
+
+    color: var(--text-secondary);
+
+    line-height: 1.6;
+}
+
+
+/* ==========================================================
+   Buttons
+========================================================== */
+
+.buttons {
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+
+    gap: 12px;
+}
+
+.buttons button {
+    height: 48px;
+
+    border-radius: var(--radius-pill);
+
+    font-size: .95rem;
+
+    font-weight: 700;
+
+    cursor: pointer;
+
+    transition: var(--transition);
+}
+
+
+/* ==========================================================
+   Yes
+========================================================== */
+
+.yesButton {
+    border: none;
+
+    background: var(--accent);
+
+    color: #111;
+}
+
+.yesButton:hover {
+    background: var(--accent-hover);
+
+    transform: translateY(-2px);
+}
+
+
+/* ==========================================================
+   No
+========================================================== */
+
+.noButton {
+    border: 1px solid var(--border-light);
+
+    background: rgba(255, 255, 255, .04);
+
+    color: var(--text);
+}
+
+.noButton:hover {
+    background: rgba(255, 255, 255, .08);
+
+    border-color: rgba(255, 255, 255, .20);
+}
+
+
+/* ==========================================================
+   Mobile
+========================================================== */
+
+@media (max-width: 480px) {
+
+    .overlay {
+        padding: 16px;
+    }
+
+    .modal {
+        padding: 32px 24px;
+    }
+
+    .modal h2 {
+        font-size: 1.5rem;
+    }
+
+}   
