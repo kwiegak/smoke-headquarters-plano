@@ -75,8 +75,16 @@ export default function Home() {
             <section className={styles.heroSection}>
 
                 <div className={styles.container}>
-
                     <div className={styles.heroLayout}>
+
+                        {/* Desktop Navigation */}
+
+                        <aside className={styles.desktopSidebar}>
+
+                            <DesktopNavigation />
+
+                        </aside>
+
 
                         {/* Premium THCA Flower */}
 
@@ -107,15 +115,6 @@ export default function Home() {
                             </div>
 
                         </div>
-
-
-                        {/* Desktop Navigation */}
-
-                        <aside className={styles.desktopSidebar}>
-
-                            <DesktopNavigation />
-
-                        </aside>
 
                     </div>
 
