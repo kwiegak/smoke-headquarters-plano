@@ -1,14 +1,39 @@
 import styles from "./Home.module.css";
 import { Link } from "react-router-dom";
+import DesktopNavigation from "../../components/Header/DesktopNavigation";
 
 export default function Home() {
     return (
         <>
-            {/* ==========================================================
-                Search
-            ========================================================== */}
 
-            <section className={styles.searchSection}>
+        {/* ==========================================================
+        Desktop Navigation + Search
+        ========================================================== */}
+
+            <section className={styles.desktopHomeTop}>
+
+                <div className={styles.container}>
+
+                    <DesktopNavigation />
+
+                    <div className={styles.desktopHomeContent}>
+
+                        <div className={styles.searchBar}>
+                            🔍 Search products, brands, flower...
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+
+        {/* ==========================================================
+        Mobile Search
+        ========================================================== */}
+
+            <section className={styles.mobileSearchSection}>
 
                 <div className={styles.container}>
 

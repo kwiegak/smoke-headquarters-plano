@@ -449,3 +449,63 @@ section {
     }
 
 }
+
+/* ==========================================================
+   Desktop Navigation Layout
+========================================================== */
+
+.desktopHomeTop {
+
+    display: none;
+
+}
+
+
+.mobileSearchSection {
+
+    display: block;
+
+}
+
+
+@media (min-width: 769px) {
+
+    .desktopHomeTop {
+
+        display: block;
+
+        padding: 32px 0 0;
+
+    }
+
+    .desktopHomeTop .container {
+
+        display: flex;
+
+        align-items: flex-start;
+
+        gap: 28px;
+
+    }
+
+    .desktopHomeContent {
+
+        flex: 1;
+
+        min-width: 0;
+
+    }
+
+    .desktopHomeContent .searchBar {
+
+        width: 100%;
+
+    }
+
+    .mobileSearchSection {
+
+        display: none;
+
+    }
+
+}

@@ -1,6 +1,9 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
-import { HiOutlineMenu } from "react-icons/hi";
+import {
+  HiOutlineMenu,
+  HiOutlineX
+} from "react-icons/hi";
 import { FiShoppingCart } from "react-icons/fi";
 import styles from "./Header.module.css";
 import logo from "../../assets/images/logo.png";
@@ -13,6 +16,7 @@ export default function Header() {
   return (
     <>
       <header className={styles.header}>
+
         <div className={styles.headerCard}>
 
           <div className={styles.leftSection}>
@@ -20,9 +24,16 @@ export default function Header() {
             <button
               className={styles.iconButton}
               onClick={() => setMenuOpen(!menuOpen)}
-              aria-label="Open navigation"
+              aria-label={
+                menuOpen
+                  ? "Close navigation"
+                  : "Open navigation"
+              }
             >
-              <HiOutlineMenu />
+              {menuOpen
+                ? <HiOutlineX />
+                : <HiOutlineMenu />
+              }
             </button>
 
             <Link
@@ -44,13 +55,16 @@ export default function Header() {
             aria-label="Shopping Cart"
           >
             <FiShoppingCart />
+
             <span className={styles.cartCount}>
               0
             </span>
           </button>
 
         </div>
+
       </header>
+
       <NavigationDrawer
         menuOpen={menuOpen}
         setMenuOpen={setMenuOpen}
