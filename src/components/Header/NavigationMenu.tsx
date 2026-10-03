@@ -1,5 +1,4 @@
 import { type Dispatch, type SetStateAction } from "react";
-import { Link } from "react-router-dom";
 import { HiChevronRight } from "react-icons/hi";
 import DrawerAccordion from "./DrawerAccordion";
 import styles from "./NavigationDrawer.module.css";
@@ -17,10 +16,21 @@ export default function NavigationMenu({
         setMenuOpen?.(false);
     };
 
+    const disabledLink = (
+        event: React.MouseEvent<HTMLAnchorElement>
+    ) => {
+        event.preventDefault();
+        onClose();
+    };
+
     return (
         <nav className={styles.nav}>
 
             {mockNavigationItems.map((item) => {
+
+                {/* ==================================================
+                    Items with children
+                ================================================== */}
 
                 if (item.children) {
 
@@ -29,32 +39,43 @@ export default function NavigationMenu({
                             key={item.title}
                             title={item.title}
                         >
+
                             {item.children.map((child) => (
-                                <Link
+
+                                <a
                                     key={child.to}
-                                    to={child.to}
-                                    onClick={onClose}
+                                    href="/"
+                                    onClick={disabledLink}
                                 >
                                     {child.label}
-                                </Link>
+                                </a>
+
                             ))}
+
                         </DrawerAccordion>
                     );
                 }
 
+
+                {/* ==================================================
+                    Standard Navigation Items
+                ================================================== */}
+
                 return (
-                    <Link
+                    <a
                         key={item.to}
-                        to={item.to!}
-                        onClick={onClose}
+                        href="/"
+                        onClick={disabledLink}
                         className={styles.navLink}
                     >
+
                         <span>
                             {item.title}
                         </span>
 
                         <HiChevronRight />
-                    </Link>
+
+                    </a>
                 );
             })}
 

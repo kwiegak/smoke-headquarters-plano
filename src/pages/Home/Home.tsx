@@ -1,8 +1,14 @@
 import styles from "./Home.module.css";
-import { Link } from "react-router-dom";
 import DesktopNavigation from "../../components/Header/DesktopNavigation";
 
 export default function Home() {
+
+    const disabledLink = (
+        event: React.MouseEvent<HTMLAnchorElement>
+    ) => {
+        event.preventDefault();
+    };
+
     return (
         <div className={styles.homePage}>
 
@@ -33,33 +39,33 @@ export default function Home() {
 
                     <div className={styles.categoryScroller}>
 
-                        <Link to="/catalog?category=flower">
+                        <a href="/" onClick={disabledLink}>
                             🌿 Flower
-                        </Link>
+                        </a>
 
-                        <Link to="/catalog?category=vapes">
+                        <a href="/" onClick={disabledLink}>
                             💨 Vapes
-                        </Link>
+                        </a>
 
-                        <Link to="/catalog?category=thca">
+                        <a href="/" onClick={disabledLink}>
                             🧪 THCA
-                        </Link>
+                        </a>
 
-                        <Link to="/catalog?category=kratom">
+                        <a href="/" onClick={disabledLink}>
                             🌱 Kratom
-                        </Link>
+                        </a>
 
-                        <Link to="/catalog?category=glass">
+                        <a href="/" onClick={disabledLink}>
                             💎 Glass
-                        </Link>
+                        </a>
 
-                        <Link to="/catalog?category=cbd">
+                        <a href="/" onClick={disabledLink}>
                             🍃 CBD
-                        </Link>
+                        </a>
 
-                        <Link to="/catalog?category=edibles">
+                        <a href="/" onClick={disabledLink}>
                             🍬 Edibles
-                        </Link>
+                        </a>
 
                     </div>
 
@@ -75,9 +81,12 @@ export default function Home() {
             <section className={styles.heroSection}>
 
                 <div className={styles.container}>
+
                     <div className={styles.heroLayout}>
 
-                        {/* Desktop Navigation */}
+                        {/* ==================================================
+                            Desktop Navigation
+                        ================================================== */}
 
                         <aside className={styles.desktopSidebar}>
 
@@ -86,9 +95,15 @@ export default function Home() {
                         </aside>
 
 
-                        {/* Premium THCA Flower */}
+                        {/* ==================================================
+                            Promo Area
+                        ================================================== */}
 
                         <div className={styles.heroPromo}>
+
+                            {/* ==================================================
+                                Main Promotion
+                            ================================================== */}
 
                             <div className={styles.promoCard}>
 
@@ -105,12 +120,133 @@ export default function Home() {
                                     flower, vapes, edibles and accessories.
                                 </p>
 
-                                <Link
-                                    to="/catalog"
+                                <a
+                                    href="/"
+                                    onClick={disabledLink}
                                     className={styles.primaryButton}
                                 >
                                     Shop Now
-                                </Link>
+                                </a>
+
+                            </div>
+
+
+                            {/* ==================================================
+                                Secondary Promotions
+                            ================================================== */}
+
+                            <div className={styles.promoGrid}>
+
+                                {/* New Vapes */}
+
+                                <div className={styles.smallPromoCard}>
+
+                                    <span className={styles.smallPromoBadge}>
+                                        New
+                                    </span>
+
+                                    <h3>
+                                        New Vape Collection
+                                    </h3>
+
+                                    <p>
+                                        Discover the latest flavors and
+                                        devices from popular brands.
+                                    </p>
+
+                                    <a
+                                        href="/"
+                                        onClick={disabledLink}
+                                        className={styles.secondaryButton}
+                                    >
+                                        Explore Vapes
+                                    </a>
+
+                                </div>
+
+
+                                {/* Premium Glass */}
+
+                                <div className={styles.smallPromoCard}>
+
+                                    <span className={styles.smallPromoBadge}>
+                                        Featured
+                                    </span>
+
+                                    <h3>
+                                        Premium Glass
+                                    </h3>
+
+                                    <p>
+                                        Hand-selected glass pieces,
+                                        water pipes and accessories.
+                                    </p>
+
+                                    <a
+                                        href="/"
+                                        onClick={disabledLink}
+                                        className={styles.secondaryButton}
+                                    >
+                                        Shop Glass
+                                    </a>
+
+                                </div>
+
+
+                                {/* CBD */}
+
+                                <div className={styles.smallPromoCard}>
+
+                                    <span className={styles.smallPromoBadge}>
+                                        Popular
+                                    </span>
+
+                                    <h3>
+                                        CBD Favorites
+                                    </h3>
+
+                                    <p>
+                                        Browse popular oils, gummies,
+                                        topicals and more.
+                                    </p>
+
+                                    <a
+                                        href="/"
+                                        onClick={disabledLink}
+                                        className={styles.secondaryButton}
+                                    >
+                                        Shop CBD
+                                    </a>
+
+                                </div>
+
+
+                                {/* Local Pickup */}
+
+                                <div className={styles.smallPromoCard}>
+
+                                    <span className={styles.smallPromoBadge}>
+                                        Shop Local
+                                    </span>
+
+                                    <h3>
+                                        Local Pickup
+                                    </h3>
+
+                                    <p>
+                                        Order online and pick up your
+                                        favorites in Plano.
+                                    </p>
+
+                                    <a
+                                        href="/"
+                                        onClick={disabledLink}
+                                        className={styles.secondaryButton}
+                                    >
+                                        Visit Store
+                                    </a>
+
+                                </div>
 
                             </div>
 
@@ -137,9 +273,12 @@ export default function Home() {
                             Featured Products
                         </h2>
 
-                        <Link to="/catalog">
+                        <a
+                            href="/"
+                            onClick={disabledLink}
+                        >
                             View All →
-                        </Link>
+                        </a>
 
                     </div>
 
@@ -166,9 +305,12 @@ export default function Home() {
                             Shop by Brand
                         </h2>
 
-                        <Link to="/brands">
+                        <a
+                            href="/"
+                            onClick={disabledLink}
+                        >
                             Browse All →
-                        </Link>
+                        </a>
 
                     </div>
 
@@ -283,12 +425,13 @@ export default function Home() {
                         industry's most trusted brands.
                     </p>
 
-                    <Link
-                        to="/catalog"
+                    <a
+                        href="/"
+                        onClick={disabledLink}
                         className={styles.primaryButton}
                     >
                         Browse Catalog
-                    </Link>
+                    </a>
 
                 </div>
 

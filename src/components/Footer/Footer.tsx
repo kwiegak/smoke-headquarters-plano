@@ -3,274 +3,328 @@ import styles from "./Footer.module.css";
 import logo from "../../assets/images/logo.png";
 
 export default function Footer() {
+
+    const disabledLink = (
+        event: React.MouseEvent<HTMLAnchorElement>
+    ) => {
+        event.preventDefault();
+    };
+
     return (
         <footer className={styles.footer}>
 
-            {/* ==================================================
-                Brand
-            ================================================== */}
+            <div className={styles.footerInner}>
 
-            <div className={styles.brandSection}>
-                <Link to="/" className={styles.logoContainer}>
-                    <img
-                        src={logo}
-                        alt="Smoke Headquarters"
-                        className={styles.logo}
-                    />
-                </Link>
-            </div>
+                {/* ==================================================
+                    Brand
+                ================================================== */}
 
+                <div className={styles.brandSection}>
 
-            {/* ==================================================
-                Benefits + Quick Links
-            ================================================== */}
-
-            <div className={styles.linkColumns}>
-
-                <div className={styles.column}>
-                    <h3>Benefits</h3>
-
-                    <Link to="/wholesale">Wholesale</Link>
-                    <Link to="/price-match">Price Match</Link>
-                    <Link to="/rewards">Rewards</Link>
-                </div>
-
-
-                <div className={styles.column}>
-                    <h3>Quick Links</h3>
-
-                    <Link to="/about-nicotine">About Nicotine</Link>
-                    <Link to="/battery-warning">Battery Warning</Link>
-                    <Link to="/terms">Terms & Conditions</Link>
-                    <Link to="/sitemap">Sitemap</Link>
-                    <Link to="/blog">Blog</Link>
-                    <Link to="/pmta-shipping-updates">
-                        PMTA/Shipping Updates
+                    <Link
+                        to="/"
+                        className={styles.logoContainer}
+                    >
+                        <img
+                            src={logo}
+                            alt="Smoke Headquarters"
+                            className={styles.logo}
+                        />
                     </Link>
-                    <Link to="/faqs">FAQs</Link>
+
                 </div>
 
-            </div>
 
+                {/* ==================================================
+                    Benefits + Quick Links
+                ================================================== */}
 
-            {/* ==================================================
-                Returns & Support
-            ================================================== */}
-
-            <div className={styles.supportSection}>
-
-                <h3>Returns & Support</h3>
-
-                <Link to="/customer-support">
-                    Customer Support
-                </Link>
-
-            </div>
-
-
-            {/* ==================================================
-                Top Categories
-            ================================================== */}
-
-            <div className={styles.categoriesSection}>
-
-                <h3>Top Categories</h3>
-
-                <div className={styles.categoryColumns}>
+                <div className={styles.linkColumns}>
 
                     <div className={styles.column}>
 
-                        <Link to="/category/geek-bar">
-                            Geek Bar Disposable Vapes
-                        </Link>
+                        <h3>Benefits</h3>
 
-                        <Link to="/category/raz">
-                            Raz Disposable Vapes
-                        </Link>
+                        <a href="/" onClick={disabledLink}>
+                            Wholesale
+                        </a>
 
-                        <Link to="/category/lost-mary">
-                            Lost Mary Disposable Vapes
-                        </Link>
+                        <a href="/" onClick={disabledLink}>
+                            Price Match
+                        </a>
 
-                        <Link to="/category/smart-disposable">
-                            Smart Disposable Vapes
-                        </Link>
-
-                        <Link to="/category/5-nic-disposable">
-                            5% Nic Disposable Vapes
-                        </Link>
-
-                        <Link to="/category/0-nic-disposable">
-                            0% Nic Disposable Vapes
-                        </Link>
-
-                        <Link to="/category/nicotine-pouches">
-                            Nicotine Pouches
-                        </Link>
-
-                        <Link to="/category/bulk-e-liquid">
-                            Bulk E-Liquid
-                        </Link>
-
-                        <Link to="/category/premium-e-liquids">
-                            Premium E-Liquids
-                        </Link>
+                        <a href="/" onClick={disabledLink}>
+                            Rewards
+                        </a>
 
                     </div>
 
 
                     <div className={styles.column}>
 
-                        <Link to="/category/pod-kits">
-                            Pod Kits
-                        </Link>
+                        <h3>Quick Links</h3>
 
-                        <Link to="/category/starter-kits">
-                            Starter Kits
-                        </Link>
+                        <a href="/" onClick={disabledLink}>
+                            About Nicotine
+                        </a>
 
-                        <Link to="/category/mods">
-                            Mods
-                        </Link>
+                        <a href="/" onClick={disabledLink}>
+                            Battery Warning
+                        </a>
 
-                        <Link to="/category/coils-pods">
-                            Coils and Pods
-                        </Link>
+                        <a href="/" onClick={disabledLink}>
+                            Terms & Conditions
+                        </a>
 
-                        <Link to="/category/tanks">
-                            Tanks
-                        </Link>
+                        <a href="/" onClick={disabledLink}>
+                            Sitemap
+                        </a>
 
-                        <Link to="/category/batteries">
-                            Batteries
-                        </Link>
+                        <a href="/" onClick={disabledLink}>
+                            Blog
+                        </a>
 
-                        <Link to="/category/cartridge-battery-devices">
-                            Cartridge Battery Devices
-                        </Link>
+                        <a href="/" onClick={disabledLink}>
+                            PMTA/Shipping Updates
+                        </a>
 
-                        <Link to="/category/e-liquid-juice">
-                            E-Liquid Juice
-                        </Link>
-
-                        <Link to="/category/tobacco-free-nicotine">
-                            Tobacco-Free Nicotine E-Liquids
-                        </Link>
+                        <a href="/" onClick={disabledLink}>
+                            FAQs
+                        </a>
 
                     </div>
 
                 </div>
 
-            </div>
 
-            {/* ==================================================
-                Products
-            ================================================== */}
+                {/* ==================================================
+                    Returns & Support
+                ================================================== */}
 
-            <div className={styles.productsSection}>
+                <div className={styles.supportSection}>
 
-                <h3>Top Products</h3>
+                    <h3>
+                        Returns & Support
+                    </h3>
 
-                <div className={styles.productsColumns}>
+                    <a href="/" onClick={disabledLink}>
+                        Customer Support
+                    </a>
 
-                    <div className={styles.column}>
-
-                        <Link to="/products/geek-bar">
-                            Geek Bar Disposable Vapes
-                        </Link>
-
-                        <Link to="/products/raz">
-                            Raz Disposable Vapes
-                        </Link>
-
-                        <Link to="/products/lost-mary">
-                            Lost Mary Disposable Vapes
-                        </Link>
-
-                        <Link to="/products/smart-disposable">
-                            Smart Disposable Vapes
-                        </Link>
-
-                        <Link to="/products/5-nic-disposable">
-                            5% Nic Disposable Vapes
-                        </Link>
-
-                        <Link to="/productsy/0-nic-disposable">
-                            0% Nic Disposable Vapes
-                        </Link>
-
-                        <Link to="/products/nicotine-pouches">
-                            Nicotine Pouches
-                        </Link>
-
-                        <Link to="/products/bulk-e-liquid">
-                            Bulk E-Liquid
-                        </Link>
-
-                        <Link to="/products/premium-e-liquids">
-                            Premium E-Liquids
-                        </Link>
-
-                    </div>
+                </div>
 
 
-                    <div className={styles.column}>
+                {/* ==================================================
+                    Top Categories
+                ================================================== */}
 
-                        <Link to="/products/pod-kits">
-                            Pod Kits
-                        </Link>
+                <div className={styles.categoriesSection}>
 
-                        <Link to="/products/starter-kits">
-                            Starter Kits
-                        </Link>
+                    <h3>
+                        Top Categories
+                    </h3>
 
-                        <Link to="/products/mods">
-                            Mods
-                        </Link>
+                    <div className={styles.categoryColumns}>
 
-                        <Link to="/products/coils-pods">
-                            Coils and Pods
-                        </Link>
+                        <div className={styles.column}>
 
-                        <Link to="/products/tanks">
-                            Tanks
-                        </Link>
+                            <a href="/" onClick={disabledLink}>
+                                Geek Bar Disposable Vapes
+                            </a>
 
-                        <Link to="/products/batteries">
-                            Batteries
-                        </Link>
+                            <a href="/" onClick={disabledLink}>
+                                Raz Disposable Vapes
+                            </a>
 
-                        <Link to="/products/cartridge-battery-devices">
-                            Cartridge Battery Devices
-                        </Link>
+                            <a href="/" onClick={disabledLink}>
+                                Lost Mary Disposable Vapes
+                            </a>
 
-                        <Link to="/products/e-liquid-juice">
-                            E-Liquid Juice
-                        </Link>
+                            <a href="/" onClick={disabledLink}>
+                                Smart Disposable Vapes
+                            </a>
 
-                        <Link to="/products/tobacco-free-nicotine">
-                            Tobacco-Free Nicotine E-Liquids
-                        </Link>
+                            <a href="/" onClick={disabledLink}>
+                                5% Nic Disposable Vapes
+                            </a>
+
+                            <a href="/" onClick={disabledLink}>
+                                0% Nic Disposable Vapes
+                            </a>
+
+                            <a href="/" onClick={disabledLink}>
+                                Nicotine Pouches
+                            </a>
+
+                            <a href="/" onClick={disabledLink}>
+                                Bulk E-Liquid
+                            </a>
+
+                            <a href="/" onClick={disabledLink}>
+                                Premium E-Liquids
+                            </a>
+
+                        </div>
+
+
+                        <div className={styles.column}>
+
+                            <a href="/" onClick={disabledLink}>
+                                Pod Kits
+                            </a>
+
+                            <a href="/" onClick={disabledLink}>
+                                Starter Kits
+                            </a>
+
+                            <a href="/" onClick={disabledLink}>
+                                Mods
+                            </a>
+
+                            <a href="/" onClick={disabledLink}>
+                                Coils and Pods
+                            </a>
+
+                            <a href="/" onClick={disabledLink}>
+                                Tanks
+                            </a>
+
+                            <a href="/" onClick={disabledLink}>
+                                Batteries
+                            </a>
+
+                            <a href="/" onClick={disabledLink}>
+                                Cartridge Battery Devices
+                            </a>
+
+                            <a href="/" onClick={disabledLink}>
+                                E-Liquid Juice
+                            </a>
+
+                            <a href="/" onClick={disabledLink}>
+                                Tobacco-Free Nicotine E-Liquids
+                            </a>
+
+                        </div>
 
                     </div>
 
                 </div>
 
-            </div>
 
-            {/* ==================================================
-                Copyright
-            ================================================== */}
+                {/* ==================================================
+                    Products
+                ================================================== */}
 
-            <div className={styles.bottomSection}>
+                <div className={styles.productsSection}>
 
-                <p>
-                    © {new Date().getFullYear()} Smoke Headquarters.
-                    All rights reserved.
-                </p>
+                    <h3>
+                        Top Products
+                    </h3>
+
+                    <div className={styles.productsColumns}>
+
+                        <div className={styles.column}>
+
+                            <a href="/" onClick={disabledLink}>
+                                Geek Bar Disposable Vapes
+                            </a>
+
+                            <a href="/" onClick={disabledLink}>
+                                Raz Disposable Vapes
+                            </a>
+
+                            <a href="/" onClick={disabledLink}>
+                                Lost Mary Disposable Vapes
+                            </a>
+
+                            <a href="/" onClick={disabledLink}>
+                                Smart Disposable Vapes
+                            </a>
+
+                            <a href="/" onClick={disabledLink}>
+                                5% Nic Disposable Vapes
+                            </a>
+
+                            <a href="/" onClick={disabledLink}>
+                                0% Nic Disposable Vapes
+                            </a>
+
+                            <a href="/" onClick={disabledLink}>
+                                Nicotine Pouches
+                            </a>
+
+                            <a href="/" onClick={disabledLink}>
+                                Bulk E-Liquid
+                            </a>
+
+                            <a href="/" onClick={disabledLink}>
+                                Premium E-Liquids
+                            </a>
+
+                        </div>
+
+
+                        <div className={styles.column}>
+
+                            <a href="/" onClick={disabledLink}>
+                                Pod Kits
+                            </a>
+
+                            <a href="/" onClick={disabledLink}>
+                                Starter Kits
+                            </a>
+
+                            <a href="/" onClick={disabledLink}>
+                                Mods
+                            </a>
+
+                            <a href="/" onClick={disabledLink}>
+                                Coils and Pods
+                            </a>
+
+                            <a href="/" onClick={disabledLink}>
+                                Tanks
+                            </a>
+
+                            <a href="/" onClick={disabledLink}>
+                                Batteries
+                            </a>
+
+                            <a href="/" onClick={disabledLink}>
+                                Cartridge Battery Devices
+                            </a>
+
+                            <a href="/" onClick={disabledLink}>
+                                E-Liquid Juice
+                            </a>
+
+                            <a href="/" onClick={disabledLink}>
+                                Tobacco-Free Nicotine E-Liquids
+                            </a>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                {/* ==================================================
+                    Copyright
+                ================================================== */}
+
+                <div className={styles.bottomSection}>
+
+                    <p>
+                        © {new Date().getFullYear()} Smoke Headquarters.
+                        All rights reserved.
+                    </p>
+
+                </div>
 
             </div>
 
         </footer>
     );
-}
+}   
