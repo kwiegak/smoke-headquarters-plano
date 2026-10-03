@@ -390,6 +390,14 @@ export default function Home() {
                             </p>
 
                             <p>
+                                <strong>
+                                    2001 Coit Rd #168
+                                    <br />
+                                    Plano, TX 75075
+                                </strong>
+                            </p>
+
+                            <p>
                                 Monday - Saturday
                                 <br />
                                 10:00 AM - 9:00 PM
@@ -397,9 +405,27 @@ export default function Home() {
 
                         </div>
 
-                        <div className={styles.mapPlaceholder}>
-                            Google Map
-                        </div>
+                        <a
+                            href="https://www.google.com/maps/search/?api=1&query=2001%20Coit%20Rd%20%23168%2C%20Plano%2C%20TX%2075075"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className={styles.mapContainer}
+                            aria-label="Open Smoke Headquarters in Google Maps"
+                        >
+
+                            <iframe
+                                title="Smoke Headquarters location"
+                                src="https://www.google.com/maps?q=2001%20Coit%20Rd%20%23168%2C%20Plano%2C%20TX%2075075&output=embed"
+                                className={styles.map}
+                                loading="lazy"
+                                allowFullScreen
+                            />
+
+                            <div className={styles.mapOverlay}>
+                                Open in Google Maps ↗
+                            </div>
+
+                        </a>
 
                     </div>
 
