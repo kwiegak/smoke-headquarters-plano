@@ -11,6 +11,7 @@ section {
     position: relative;
 }
 
+
 /* ==========================================================
    Shared Section Spacing
 ========================================================== */
@@ -18,7 +19,6 @@ section {
 .searchSection,
 .categories,
 .featured,
-.promo,
 .brands,
 .whyUs,
 .location,
@@ -27,13 +27,13 @@ section {
 }
 
 .featured,
-.promo,
 .brands,
 .whyUs,
 .location,
 .cta {
     padding-top: 64px;
 }
+
 
 /* ==========================================================
    Search
@@ -67,6 +67,7 @@ section {
     background: var(--surface-light);
 
 }
+
 
 /* ==========================================================
    Categories
@@ -126,6 +127,7 @@ section {
 
 }
 
+
 /* ==========================================================
    Promo Card
 ========================================================== */
@@ -183,6 +185,7 @@ section {
 
 }
 
+
 /* ==========================================================
    Buttons
 ========================================================== */
@@ -215,6 +218,7 @@ section {
     transform: translateY(-2px);
 
 }
+
 
 /* ==========================================================
    Section Header
@@ -254,6 +258,7 @@ section {
 
 }
 
+
 /* ==========================================================
    Product Grid
 ========================================================== */
@@ -267,6 +272,7 @@ section {
     gap: 24px;
 
 }
+
 
 /* ==========================================================
    Brand Scroller
@@ -291,6 +297,7 @@ section {
     display: none;
 
 }
+
 
 /* ==========================================================
    Features
@@ -330,6 +337,7 @@ section {
 
 }
 
+
 /* ==========================================================
    Location
 ========================================================== */
@@ -365,6 +373,7 @@ section {
 
 }
 
+
 /* ==========================================================
    CTA
 ========================================================== */
@@ -391,11 +400,12 @@ section {
 
 }
 
+
 /* ==========================================================
    Responsive
 ========================================================== */
 
-@media (max-width:900px) {
+@media (max-width: 900px) {
 
     .features {
 
@@ -411,7 +421,8 @@ section {
 
 }
 
-@media (max-width:768px) {
+
+@media (max-width: 768px) {
 
     .searchSection,
     .categories,
@@ -451,61 +462,67 @@ section {
 }
 
 /* ==========================================================
-   Desktop Navigation Layout
+   Home Page
 ========================================================== */
 
-.desktopHomeTop {
-
-    display: none;
-
+.homePage {
+    width: 100%;
 }
 
 
-.mobileSearchSection {
+/* ==========================================================
+   Hero
+========================================================== */
 
+.heroSection {
+    padding: 32px 0 64px;
+}
+
+.heroLayout {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) 280px;
+    gap: 28px;
+    align-items: stretch;
+}
+
+.heroPromo {
+    min-width: 0;
+}
+
+.desktopSidebar {
     display: block;
-
 }
 
+/* ==========================================================
+   Desktop
+========================================================== */
 
 @media (min-width: 769px) {
 
-    .desktopHomeTop {
-
-        display: block;
-
-        padding: 32px 0 0;
-
-    }
-
-    .desktopHomeTop .container {
-
-        display: flex;
-
-        align-items: flex-start;
-
-        gap: 28px;
-
-    }
-
-    .desktopHomeContent {
-
-        flex: 1;
-
+    .heroPromo,
+    .desktopSidebar {
         min-width: 0;
-
     }
 
-    .desktopHomeContent .searchBar {
+}
 
-        width: 100%;
 
+/* ==========================================================
+   Mobile
+========================================================== */
+
+@media (max-width: 768px) {
+
+    .heroSection {
+        padding: 24px 0;
     }
 
-    .mobileSearchSection {
+    .heroLayout {
+        display: block;
+    }
 
+    .desktopSidebar {
         display: none;
-
     }
 
 }

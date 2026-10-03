@@ -4,36 +4,13 @@ import DesktopNavigation from "../../components/Header/DesktopNavigation";
 
 export default function Home() {
     return (
-        <>
+        <div className={styles.homePage}>
 
-        {/* ==========================================================
-        Desktop Navigation + Search
-        ========================================================== */}
+            {/* ==========================================================
+                Search
+            ========================================================== */}
 
-            <section className={styles.desktopHomeTop}>
-
-                <div className={styles.container}>
-
-                    <DesktopNavigation />
-
-                    <div className={styles.desktopHomeContent}>
-
-                        <div className={styles.searchBar}>
-                            🔍 Search products, brands, flower...
-                        </div>
-
-                    </div>
-
-                </div>
-
-            </section>
-
-
-        {/* ==========================================================
-        Mobile Search
-        ========================================================== */}
-
-            <section className={styles.mobileSearchSection}>
+            <section className={styles.searchSection}>
 
                 <div className={styles.container}>
 
@@ -44,6 +21,7 @@ export default function Home() {
                 </div>
 
             </section>
+
 
             {/* ==========================================================
                 Categories
@@ -89,41 +67,62 @@ export default function Home() {
 
             </section>
 
+
             {/* ==========================================================
-                Weekly Promotion
+                Desktop Hero
             ========================================================== */}
 
-            <section className={styles.promo}>
+            <section className={styles.heroSection}>
 
                 <div className={styles.container}>
 
-                    <div className={styles.promoCard}>
+                    <div className={styles.heroLayout}>
 
-                        <span className={styles.promoBadge}>
-                            New Arrival
-                        </span>
+                        {/* Premium THCA Flower */}
 
-                        <h2>
-                            Premium THCA Flower
-                        </h2>
+                        <div className={styles.heroPromo}>
 
-                        <p>
-                            Explore our newest collection of premium flower,
-                            vapes, edibles and accessories.
-                        </p>
+                            <div className={styles.promoCard}>
 
-                        <Link
-                            to="/catalog"
-                            className={styles.primaryButton}
-                        >
-                            Shop Now
-                        </Link>
+                                <span className={styles.promoBadge}>
+                                    New Arrival
+                                </span>
+
+                                <h2>
+                                    Premium THCA Flower
+                                </h2>
+
+                                <p>
+                                    Explore our newest collection of premium
+                                    flower, vapes, edibles and accessories.
+                                </p>
+
+                                <Link
+                                    to="/catalog"
+                                    className={styles.primaryButton}
+                                >
+                                    Shop Now
+                                </Link>
+
+                            </div>
+
+                        </div>
+
+
+                        {/* Desktop Navigation */}
+
+                        <aside className={styles.desktopSidebar}>
+
+                            <DesktopNavigation />
+
+                        </aside>
 
                     </div>
 
                 </div>
 
             </section>
+
 
             {/* ==========================================================
                 Featured Products
@@ -146,14 +145,13 @@ export default function Home() {
                     </div>
 
                     <div className={styles.productGrid}>
-
                         {/* Product Cards */}
-
                     </div>
 
                 </div>
 
             </section>
+
 
             {/* ==========================================================
                 Shop by Brand
@@ -176,14 +174,13 @@ export default function Home() {
                     </div>
 
                     <div className={styles.brandScroller}>
-
                         {/* Brand Logos */}
-
                     </div>
 
                 </div>
 
             </section>
+
 
             {/* ==========================================================
                 Why Shop Here
@@ -216,6 +213,7 @@ export default function Home() {
                 </div>
 
             </section>
+
 
             {/* ==========================================================
                 Visit Our Store
@@ -259,9 +257,7 @@ export default function Home() {
                         </div>
 
                         <div className={styles.mapPlaceholder}>
-
                             Google Map
-
                         </div>
 
                     </div>
@@ -269,6 +265,7 @@ export default function Home() {
                 </div>
 
             </section>
+
 
             {/* ==========================================================
                 Footer CTA
@@ -283,8 +280,8 @@ export default function Home() {
                     </h2>
 
                     <p>
-                        Browse hundreds of premium products from the industry's
-                        most trusted brands.
+                        Browse hundreds of premium products from the
+                        industry's most trusted brands.
                     </p>
 
                     <Link
@@ -298,6 +295,6 @@ export default function Home() {
 
             </section>
 
-        </>
+        </div>
     );
 }

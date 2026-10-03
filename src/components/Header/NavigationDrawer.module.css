@@ -3,113 +3,66 @@
 ========================================================== */
 
 .drawer {
-
     position: fixed;
-
     inset: 0;
 
     z-index: 2000;
 
     pointer-events: none;
-
 }
 
-.drawerCard {
-
-    position: absolute;
-
-    top: 64px;
-
-    left: 0;
-
-    width: 100%;
-
-    height: calc(100vh - 64px);
-
-    background: var(--surface);
-
-    border: none;
-
-    border-radius: 0;
-
-    overflow-y: auto;
-
-    transform: translateX(-100%);
-
-    transition: transform .30s ease;
-
-    pointer-events: auto;
-
-    box-shadow: var(--shadow-lg);
-
-}
-
-.drawerOpen .drawerCard {
-
-    transform: translateX(0);
-
-}
 
 /* ==========================================================
    Overlay
 ========================================================== */
 
 .overlay {
-
     position: fixed;
-
     inset: 0;
 
     background: rgba(0, 0, 0, .55);
 
-    backdrop-filter: blur(4px);
-
-    z-index: 1999;
-
+    z-index: 1;
 }
+
 
 /* ==========================================================
-   Close Button
+   Drawer Card
 ========================================================== */
 
-.closeButton {
-
+.drawerCard {
     position: absolute;
 
-    top: 16px;
-    right: 16px;
+    top: 64px;
+    left: 0;
 
-    width: 44px;
-    height: 44px;
+    width: 100%;
+    height: calc(100vh - 64px);
 
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    background: var(--surface);
 
-    border: none;
-    border-radius: 50%;
+    overflow-y: auto;
 
-    background: var(--accent);
-    color: var(--background);
-
-    box-shadow: var(--shadow-sm);
-
-    z-index: 5;
+    transform: translateX(-100%);
 
     transition:
-        transform var(--transition-fast),
-        background var(--transition-fast),
-        box-shadow var(--transition-fast);
+        transform .30s ease;
+
+    pointer-events: auto;
+
+    box-shadow: var(--shadow-lg);
+
+    z-index: 2;
 }
 
-.closeButton:hover {
-
-    background: var(--accent-hover);
-
-    transform: scale(1.05);
-
-    box-shadow: var(--shadow-md);
+.drawerOpen {
+    pointer-events: auto;
 }
+
+.drawerOpen .drawerCard {
+    transform: translateX(0);
+}
+
 
 /* ==========================================================
    Navigation
@@ -118,8 +71,10 @@
 .nav {
     display: flex;
     flex-direction: column;
+
     padding: 20px 0 40px;
 }
+
 
 /* ==========================================================
    Links
@@ -127,19 +82,16 @@
 
 .navLink,
 .expandButton {
-
     width: 100%;
 
     display: flex;
 
     justify-content: space-between;
-
     align-items: center;
 
     padding: 22px 30px;
 
     background: none;
-
     border: none;
 
     color: var(--text);
@@ -147,7 +99,6 @@
     text-decoration: none;
 
     font-size: 1.55rem;
-
     font-weight: 700;
 
     transition: var(--transition);
@@ -162,12 +113,10 @@
 
 .navLink svg,
 .expandButton svg {
-
     font-size: 1.4rem;
-
     color: #999;
-
 }
+
 
 /* ==========================================================
    Sub Menu
@@ -176,44 +125,48 @@
 .subMenu {
     display: flex;
     flex-direction: column;
+
     background: var(--background);
 }
 
 .subMenu a {
     padding: 16px 50px;
+
     text-decoration: none;
+
     color: var(--text-secondary);
+
     font-size: 1.05rem;
+
     transition: var(--transition);
 }
 
 .subMenu a:hover {
     background: var(--surface-light);
+
     color: var(--text);
 }
+
 
 /* ==========================================================
    Divider
 ========================================================== */
 
 .nav hr {
-
     margin: 20px 30px;
 
     border: none;
 
-    border-top: 1px solid #e8e8e8;
-
+    border-top: 1px solid var(--border);
 }
+
 
 /* ==========================================================
    Desktop Navigation Card
 ========================================================== */
 
 .desktopNavigation {
-
     display: none;
-
 }
 
 
@@ -224,7 +177,6 @@
 @media (min-width: 769px) {
 
     .desktopNavigation {
-
         display: block;
 
         width: 280px;
@@ -241,10 +193,13 @@
 
         overflow: hidden;
 
+        position: sticky;
+
+        top: 96px;
     }
 
-    .desktopNavigationHeader {
 
+    .desktopNavigationHeader {
         display: flex;
 
         align-items: center;
@@ -264,47 +219,41 @@
         letter-spacing: 1.5px;
 
         text-transform: uppercase;
-
     }
+
 
     .desktopNavigation .nav {
-
         padding: 10px 0 14px;
-
     }
+
 
     .desktopNavigation .navLink,
     .desktopNavigation .expandButton {
-
         padding: 16px 20px;
 
         font-size: 1rem;
 
         font-weight: 600;
-
     }
+
 
     .desktopNavigation .navLink svg,
     .desktopNavigation .expandButton svg {
-
         font-size: 1.1rem;
-
     }
 
-    .desktopNavigation .subMenu a {
 
+    .desktopNavigation .subMenu a {
         padding: 12px 20px 12px 36px;
 
         font-size: .9rem;
-
     }
 
-    /* Hide the mobile drawer completely */
+
+    /* Mobile drawer does not exist on desktop */
 
     .drawer {
-
         display: none;
-
     }
 
 }

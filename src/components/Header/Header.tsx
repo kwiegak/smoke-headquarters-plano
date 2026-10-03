@@ -19,51 +19,55 @@ export default function Header() {
 
         <div className={styles.headerCard}>
 
-          <div className={styles.leftSection}>
+          <div className={styles.headerInner}>
+
+            <div className={styles.leftSection}>
+
+              <button
+                className={styles.iconButton}
+                onClick={() => setMenuOpen(!menuOpen)}
+                aria-label={
+                  menuOpen
+                    ? "Close navigation"
+                    : "Open navigation"
+                }
+              >
+                {menuOpen
+                  ? <HiOutlineX />
+                  : <HiOutlineMenu />
+                }
+              </button>
+
+              <Link
+                to="/"
+                className={styles.logoContainer}
+              >
+                <img
+                  onClick={() => setMenuOpen(false)}
+                  src={logo}
+                  alt="Smoke Headquarters"
+                  className={styles.logo}
+                />
+              </Link>
+
+            </div>
 
             <button
-              className={styles.iconButton}
-              onClick={() => setMenuOpen(!menuOpen)}
-              aria-label={
-                menuOpen
-                  ? "Close navigation"
-                  : "Open navigation"
-              }
+              className={styles.cartButton}
+              aria-label="Shopping Cart"
             >
-              {menuOpen
-                ? <HiOutlineX />
-                : <HiOutlineMenu />
-              }
-            </button>
+              <FiShoppingCart />
 
-            <Link
-              to="/"
-              className={styles.logoContainer}
-            >
-              <img
-                onClick={() => setMenuOpen(false)}
-                src={logo}
-                alt="Smoke Headquarters"
-                className={styles.logo}
-              />
-            </Link>
+              <span className={styles.cartCount}>
+                0
+              </span>
+            </button>
 
           </div>
 
-          <button
-            className={styles.cartButton}
-            aria-label="Shopping Cart"
-          >
-            <FiShoppingCart />
-
-            <span className={styles.cartCount}>
-              0
-            </span>
-          </button>
-
         </div>
 
-      </header>
+      </header> 
 
       <NavigationDrawer
         menuOpen={menuOpen}
